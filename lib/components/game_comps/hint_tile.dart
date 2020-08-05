@@ -23,9 +23,7 @@ class HintTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
-      builder: (context, GridProvider gameProvider, child) {
-        return Container(
+    return Container(
           decoration: BoxDecoration(
               color: (number % 2 == 0) ? Colors.orangeAccent : Colors.yellow,
               border: Border.all(color: Colors.black, width: 1.0)),
@@ -33,7 +31,6 @@ class HintTile extends StatelessWidget {
               ? Row(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context))
               : Column(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context)),
         );
-      },
-    );
+
   }
 }

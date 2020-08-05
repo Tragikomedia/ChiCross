@@ -9,6 +9,6 @@ class Game {
   Game({@required this.correctTiles, @required this.height, @required this.width});
 
   void markGameFinished() {
-    isFinished = ValueNotifier(true);
+    isFinished.value = true;
   }
 }

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ChiCross',
-      home: GameScreen(game: games[1],)
+      home: GameScreen(game: games[0],)
     );
   }
 }

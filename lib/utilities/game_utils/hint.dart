@@ -7,7 +7,7 @@ class Hint {
   final int numberOfCorrectOnes;
   int numberOfMarkedTiles = 0;
   ValueNotifier<bool> isCompleted;
-  Hint({this.hintNums, this.numberOfCorrectOnes, this.isCompleted});
+  Hint({@required this.hintNums, @required this.numberOfCorrectOnes, @required this.isCompleted});
 
   void updateMarkedTiles() {
     numberOfMarkedTiles++;
@@ -16,6 +16,6 @@ class Hint {
     }
   }
   void markCompleted() {
-    isCompleted = ValueNotifier(true);
+    isCompleted.value = true;
   }
 }
