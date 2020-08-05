@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/utilities/game_utils/hint.dart';
 import 'package:chinese_picross/utilities/game_utils/game.dart';
+import 'package:chinese_picross/utilities/game_utils/tile_sort.dart';
 
 //TODO List of tiles instead of numbers (keep the lists!)
 class GridProvider extends ChangeNotifier {
   GridProvider({@required this.game})
       : hintColumns = List(game.width),
         hintRows = List(game.height),
+  gameTiles = List(game.width * game.height),
   correctTiles = game.correctTiles,
   height = game.height,
   width = game.width,
@@ -21,6 +23,8 @@ class GridProvider extends ChangeNotifier {
 
   List hintColumns;
   List hintRows;
+  List<ValueNotifier> gameTiles;
+
   int numberOfMarked = 0;
   List<int> markedTiles = [];
   List<int> crossedTiles = [];
@@ -29,6 +33,7 @@ class GridProvider extends ChangeNotifier {
     if (!crossedTiles.contains(number) && !markedTiles.contains(number)) {
       if (correctTiles.contains(number)) {
         markedTiles.add(number);
+        gameTiles[number].value = TileSort.marked;
         hintRows[determineRow(number)].updateMarkedTiles();
         hintColumns[determineColumn(number)].updateMarkedTiles();
         numberOfMarked++;
@@ -38,7 +43,7 @@ class GridProvider extends ChangeNotifier {
       } else {
         toggleCrossed(number);
       }
-      notifyListeners();
+//      notifyListeners();
     }
   }
 
@@ -46,20 +51,29 @@ class GridProvider extends ChangeNotifier {
     if (!markedTiles.contains(number)) {
       if (crossedTiles.contains(number)) {
         crossedTiles.remove(number);
+        gameTiles[number].value = TileSort.empty;
       } else {
         crossedTiles.add(number);
+        gameTiles[number].value = TileSort.crossed;
       }
     }
-    notifyListeners();
+//    notifyListeners();
   }
 
   bool isTileCrossed(int number) {
     return crossedTiles.contains(number);
   }
 
-  void initializeHintTiles() {
+  void initializeTiles() {
     initializeRowHints();
     initializeColumnHints();
+    initializeGameTiles();
+  }
+
+  void initializeGameTiles() {
+    for (int i = 0; i < gameTiles.length; i++) {
+      gameTiles[i] = ValueNotifier<TileSort>(TileSort.empty);
+    }
   }
 
   void initializeColumnHints() {
@@ -120,13 +134,6 @@ class GridProvider extends ChangeNotifier {
             isCompleted: ValueNotifier(false));
       }
     }
-  }
-
-  Color determineTileColor(int number) {
-    if (markedTiles.contains(number)) {
-      return Colors.black;
-    }
-    return (number ~/ height) % 2 == 0 ? Colors.white : Colors.yellowAccent;
   }
 
   int determineRow(int number) {
