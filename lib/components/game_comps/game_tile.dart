@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/components/game_comps/cross_icon.dart';
 import 'package:provider/provider.dart';
-import 'package:chinese_picross/utilities/game_utils/tile_sort.dart';
+import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 class GameTile extends StatelessWidget {
   final int number;

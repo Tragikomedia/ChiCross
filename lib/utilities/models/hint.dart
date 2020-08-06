@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-enum HintSort { row, column }
-
 class Hint {
   final List<int> hintNums;
   final int numberOfCorrectOnes;

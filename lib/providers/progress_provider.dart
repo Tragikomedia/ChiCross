@@ -2,13 +2,12 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
-import 'package:chinese_picross/utilities/progress_utils/progress_model.dart';
-import 'package:chinese_picross/picross_files/games.dart';
+import 'package:chinese_picross/utilities/models/progress_model.dart';
+import 'package:chinese_picross/picross_files/picross_list.dart';
 
 class ProgressProvider extends ChangeNotifier {
   Database database;
-  List<Map> progressDB;
-  
+  List<bool> completenessTracker = List(picrossList.length);
 
   Future<Database> getDatabase() async {
     var dbDir = await getDatabasesPath();
@@ -29,20 +28,20 @@ class ProgressProvider extends ChangeNotifier {
     database = await getDatabase();
     List<Map> maps = await database.query('progress');
     if (maps.isEmpty) {
-      for (int i = 0; i < games.length; i++) {
+      for (int i = 0; i < picrossList.length; i++) {
         await database.insert('progress', ProgressModel(number: i, isCompleted: false).toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
-    progressDB = maps;
+    for (Map map in maps) {
+      completenessTracker[map['number']] = map['completed'] == 1;
+    }
     return true;
   }
-  void getProgress() {
-    print(progressDB);
-  }
 
-  void markCompleted(dynamic num) async {
+  void markCompleted(int num) async {
     database.update('progress',{'completed':1},where: "number = $num",);
-    progressDB = await database.query('progress');
+    completenessTracker[num] = true;
+    notifyListeners();
   }
 
 }

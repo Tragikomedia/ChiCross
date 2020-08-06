@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/picross_files/games.dart';
+import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/screens/game_screen.dart';
+import 'package:chinese_picross/providers/progress_provider.dart';
+import 'package:chinese_picross/utilities/models/description.dart';
+import 'package:provider/provider.dart';
 
 class CharacterSelectionTile extends StatelessWidget {
   final int index;
-  final String character;
-  final String description;
-  final bool isCompleted;
+  final Description description;
 
-  CharacterSelectionTile({this.index, this.character, this.description, this.isCompleted});
+  CharacterSelectionTile({this.index, this.description,});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(onTap: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => GameScreen(game: games[index],)));
-    },child: Card(child: Column(children: [Text(isCompleted ? character : '?'), Text(description)],),));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => GameScreen(game: picrossList[index].game, gameNumber: index,)));
+    },child: Card(child: Column(children: [Text(Provider.of<ProgressProvider>(context).completenessTracker[index] ? description.character : '?'), Text(description.meaning)],),));
   }
 }

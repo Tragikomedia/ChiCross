@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/utilities/game_utils/hint.dart';
+import 'package:chinese_picross/utilities/models/hint.dart';
 import 'package:chinese_picross/utilities/game_utils/dimensions_utilities.dart';
 
 class HintTileText extends StatelessWidget {

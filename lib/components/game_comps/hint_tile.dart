@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/components/game_comps/hint_tile_text.dart';
-import 'package:chinese_picross/utilities/game_utils/hint.dart';
+import 'package:chinese_picross/utilities/models/hint.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 class HintTile extends StatelessWidget {
   final int number;

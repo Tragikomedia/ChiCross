@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/utilities/game_utils/hint.dart';
-import 'package:chinese_picross/utilities/game_utils/game.dart';
-import 'package:chinese_picross/utilities/game_utils/tile_sort.dart';
+import 'package:chinese_picross/utilities/models/hint.dart';
+import 'package:chinese_picross/utilities/models/game.dart';
+import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 class GridProvider extends ChangeNotifier {
   GridProvider({@required this.game})
