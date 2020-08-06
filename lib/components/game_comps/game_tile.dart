@@ -33,7 +33,6 @@ class GameTile extends StatelessWidget {
         },
         child: ValueListenableBuilder(valueListenable: gridProvider.gameTiles[number],
           builder: (context, tileSort, child) {
-          print(tileSort);
           return Container(
           decoration: BoxDecoration(
               color: determineTileColor(tileSort, number),

@@ -25,7 +25,7 @@ List<StaggeredTile> stagTiles(int width, int height) {
 List<Widget> gridTiles(int width, int height) {
   List<Widget> newList = [];
   // Top left box
-  newList.add(Container());
+  newList.add(Container(decoration: BoxDecoration(color: Colors.yellow),child: FittedBox(fit: BoxFit.fill, child: Text('福', style: TextStyle(color: Colors.orange),),)));
   // Row hint tiles
   for (int i = 0; i < height; i++) {
     newList.add(HintTile(

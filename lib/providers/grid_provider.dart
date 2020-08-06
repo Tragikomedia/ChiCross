@@ -4,7 +4,6 @@ import 'package:chinese_picross/utilities/game_utils/hint.dart';
 import 'package:chinese_picross/utilities/game_utils/game.dart';
 import 'package:chinese_picross/utilities/game_utils/tile_sort.dart';
 
-//TODO List of tiles instead of numbers (keep the lists!)
 class GridProvider extends ChangeNotifier {
   GridProvider({@required this.game})
       : hintColumns = List(game.width),

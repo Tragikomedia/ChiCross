@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/utilities/game_utils/game.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/components/game_comps/grid_box.dart';
+import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:provider/provider.dart';
 
 class GameScreen extends StatefulWidget {
@@ -21,7 +22,13 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(body: ChangeNotifierProvider(create: (context) => GridProvider(
           game: widget.game),child: ValueListenableBuilder<bool>(valueListenable: widget.game.isFinished,
     builder: (BuildContext context, bool isFinished, Widget child) {
-    return isFinished ? Text('Victory') : Column(children: [Text('Welcome to ChiCross!'), GridBox(width: widget.game.width, height: widget.game.height,)]);}))
+    return isFinished
+        ? Column(children: [Text('Victory'), RaisedButton(onPressed: () {
+      Provider.of<ProgressProvider>(context, listen: false).markCompleted(widget.game.gameNumber);
+      Navigator.pop(context);
+      print('Done');
+    },)])
+        : Column(children: [Text('Welcome to ChiCross!'), GridBox(width: widget.game.width, height: widget.game.height,)]);}))
     );
   }
 }
