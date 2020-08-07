@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
-import 'package:chinese_picross/providers/grid_provider.dart';
 
 class VictoryView extends StatelessWidget {
   final int gameNumber;
@@ -14,7 +13,6 @@ class VictoryView extends StatelessWidget {
     return Column(children: [Text('Victory'), RaisedButton(child: Text('Go back'),onPressed: () {
       progressProvider.markCompleted(gameNumber);
       progressProvider.eraseLevelProgress(gameNumber);
-      Provider.of<GridProvider>(context, listen: false).finishTheGame();
       Navigator.pop(context);
     },)]);
   }

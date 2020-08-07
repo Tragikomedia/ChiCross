@@ -12,6 +12,7 @@ class GameGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO Remove this from build, maybe
     Provider.of<GridProvider>(context, listen: false).initializeTiles();
     return StaggeredGridView.count(
       scrollDirection: Axis.horizontal,

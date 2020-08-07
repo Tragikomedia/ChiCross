@@ -6,7 +6,7 @@ import 'package:chinese_picross/utilities/models/game.dart';
 import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 class GridProvider extends ChangeNotifier {
-  GridProvider({@required this.game})
+  GridProvider({@required this.game, this.loadSaveFile=false, this.saveData})
       : hintColumns = List(game.width),
         hintRows = List(game.height),
         gameTiles = List(game.width * game.height),
@@ -16,16 +16,19 @@ class GridProvider extends ChangeNotifier {
         numberOfCorrect = game.correctTiles.length;
 
   final Game game;
-  final List<int> correctTiles;
   final int height;
   final int width;
   final int numberOfCorrect;
+  final bool loadSaveFile;
+  final List<int> correctTiles;
+  final List<List<int>> saveData;
 
   List hintColumns;
   List hintRows;
   List<ValueNotifier> gameTiles;
 
   int numberOfMarked = 0;
+  ValueNotifier<bool> isFinished = ValueNotifier(false);
   List<int> markedTiles = [];
   List<int> crossedTiles = [];
 
@@ -38,7 +41,7 @@ class GridProvider extends ChangeNotifier {
         hintColumns[determineColumn(number)].updateMarkedTiles();
         numberOfMarked++;
         if (numberOfCorrect == numberOfMarked) {
-          game.markGameFinished();
+          isFinished.value = true;
         }
       } else {
         toggleCrossed(number);
@@ -66,6 +69,14 @@ class GridProvider extends ChangeNotifier {
     initializeRowHints();
     initializeColumnHints();
     initializeGameTiles();
+    if (loadSaveFile) {
+      for (int tile in saveData[0]) {
+        checkTileCorrect(tile);
+      }
+      for (int tile in saveData[1]) {
+        toggleCrossed(tile);
+      }
+    }
   }
 
   void initializeGameTiles() {
@@ -148,9 +159,5 @@ class GridProvider extends ChangeNotifier {
     UnmodifiableListView<int> marked = UnmodifiableListView(markedTiles);
     UnmodifiableListView<int> crossed = UnmodifiableListView(crossedTiles);
     return [marked, crossed];
-  }
-
-  void finishTheGame() {
-    game.clearGameState();
   }
 }

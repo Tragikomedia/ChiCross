@@ -26,7 +26,7 @@ class ProgressProvider extends ChangeNotifier {
   deleteDatabase(path);
   print('deleted');
 }
-
+//TODO Use the bool in initial screen to inform that something went wrong with saves
   Future<bool> initializeDatabase() async {
     // FirstTimeInit prevents method realization when notifyListeners is used
     if (firstTimeInit) {
@@ -69,6 +69,28 @@ class ProgressProvider extends ChangeNotifier {
 
   void eraseLevelProgress(int num) async {
     await database.update('progress',{'marked':null, 'crossed':null},where: "number = $num",);
+  }
+
+  Future<List<List<int>>> retrieveLevelProgress(int num) async {
+    List<Map> results = await database.rawQuery(
+        'SELECT marked, crossed FROM progress WHERE number = $num');
+    if (results.isNotEmpty && (results[0]['marked'] != null || results[0]['crossed'] != null)) {
+      List<List<int>> saveData = [[], []];
+      try {
+        results[0]['marked'].split(',').forEach((element) =>
+            saveData[0].add(int.parse(element)));
+      } catch (err) {
+        print('No marked tiles saved.');
+      }
+      try {
+        results[0]['crossed'].split(',').forEach((element) =>
+            saveData[1].add(int.parse(element)));
+      } catch (err) {
+        print('No crossed tile saved.');
+      }
+      return saveData;
+    }
+    return null;
   }
 
 }

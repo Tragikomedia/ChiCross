@@ -10,15 +10,20 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   Future<bool> _databaseLoaded;
-  Future<bool> initDb() async {
-    return await Provider.of<ProgressProvider>(context).initializeDatabase();
+  void initDb(BuildContext context) {
+    setState(() {
+      _databaseLoaded = Provider.of<ProgressProvider>(context,listen: false).initializeDatabase();
+    });
   }
-
+  @override
+  void initState() {
+    super.initState();
+    // It's the only not terrible way to link future builder to provider
+    WidgetsBinding.instance.addPostFrameCallback((_) => initDb(context));
+  }
+  
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      _databaseLoaded = initDb();
-    });
     return FutureBuilder<bool>(
       future: _databaseLoaded,
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
