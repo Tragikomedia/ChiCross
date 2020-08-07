@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:chinese_picross/utilities/models/game.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/components/game_comps/grid_box.dart';
-import 'package:chinese_picross/providers/progress_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:chinese_picross/components/game_comps/save_button.dart';
+import 'package:chinese_picross/components/game_comps/victory_view.dart';
+
 
 class GameScreen extends StatefulWidget {
   final Game game;
@@ -24,11 +26,8 @@ class _GameScreenState extends State<GameScreen> {
           game: widget.game),child: ValueListenableBuilder<bool>(valueListenable: widget.game.isFinished,
     builder: (BuildContext context, bool isFinished, Widget child) {
     return isFinished
-        ? Column(children: [Text('Victory'), RaisedButton(onPressed: () {
-      Provider.of<ProgressProvider>(context, listen: false).markCompleted(widget.gameNumber);
-      Navigator.pop(context);
-    },)])
-        : Column(children: [Text('Welcome to ChiCross!'), GridBox(width: widget.game.width, height: widget.game.height,)]);}))
+        ? VictoryView(gameNumber: widget.gameNumber,)
+        : Column(children: [Text('Welcome to ChiCross!'), GridBox(width: widget.game.width, height: widget.game.height,), SaveButton(gameNumber: widget.gameNumber,)]);}))
     );
   }
 }

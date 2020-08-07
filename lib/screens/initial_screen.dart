@@ -32,9 +32,6 @@ class _InitialScreenState extends State<InitialScreen> {
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {
-          print('reached before init');
-
-            print('reached after init');
           return Text('Lelum polelum');
         }
       },

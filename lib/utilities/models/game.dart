@@ -11,4 +11,9 @@ class Game {
   void markGameFinished() {
     isFinished.value = true;
   }
+
+  void clearGameState() {
+    isFinished.value = false;
+  }
+
 }

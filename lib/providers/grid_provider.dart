@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/utilities/models/hint.dart';
@@ -8,10 +9,10 @@ class GridProvider extends ChangeNotifier {
   GridProvider({@required this.game})
       : hintColumns = List(game.width),
         hintRows = List(game.height),
-  gameTiles = List(game.width * game.height),
-  correctTiles = game.correctTiles,
-  height = game.height,
-  width = game.width,
+        gameTiles = List(game.width * game.height),
+        correctTiles = game.correctTiles,
+        height = game.height,
+        width = game.width,
         numberOfCorrect = game.correctTiles.length;
 
   final Game game;
@@ -42,7 +43,6 @@ class GridProvider extends ChangeNotifier {
       } else {
         toggleCrossed(number);
       }
-//      notifyListeners();
     }
   }
 
@@ -56,7 +56,6 @@ class GridProvider extends ChangeNotifier {
         gameTiles[number].value = TileSort.crossed;
       }
     }
-//    notifyListeners();
   }
 
   bool isTileCrossed(int number) {
@@ -82,11 +81,11 @@ class GridProvider extends ChangeNotifier {
       tempList =
           correctTiles.where((tileNum) => tileNum ~/ height == i).toList();
       if (tempList.isEmpty) {
-        hintColumns[i] = Hint(hintNums: [0],
+        hintColumns[i] = Hint(
+            hintNums: [0],
             numberOfCorrectOnes: 0,
             isCompleted: ValueNotifier(true));
-      }
-      else {
+      } else {
         counter = 1;
         List<int> hintList = [];
         for (int tile in tempList) {
@@ -97,9 +96,10 @@ class GridProvider extends ChangeNotifier {
             counter = 1;
           }
         }
-        hintColumns[i] = Hint(hintNums: hintList,
-            numberOfCorrectOnes: hintList.reduce((value, element) =>
-            value + element),
+        hintColumns[i] = Hint(
+            hintNums: hintList,
+            numberOfCorrectOnes:
+                hintList.reduce((value, element) => value + element),
             isCompleted: ValueNotifier(false));
       }
     }
@@ -112,11 +112,11 @@ class GridProvider extends ChangeNotifier {
       tempList =
           correctTiles.where((tileNum) => (tileNum - i) % height == 0).toList();
       if (tempList.isEmpty) {
-        hintRows[i] = Hint(hintNums: [0],
+        hintRows[i] = Hint(
+            hintNums: [0],
             numberOfCorrectOnes: 0,
             isCompleted: ValueNotifier(true));
-      }
-      else {
+      } else {
         counter = 1;
         List<int> hintList = [];
         for (int tile in tempList) {
@@ -127,9 +127,10 @@ class GridProvider extends ChangeNotifier {
             counter = 1;
           }
         }
-        hintRows[i] = Hint(hintNums: hintList,
-            numberOfCorrectOnes: hintList.reduce((value, element) =>
-            value + element),
+        hintRows[i] = Hint(
+            hintNums: hintList,
+            numberOfCorrectOnes:
+                hintList.reduce((value, element) => value + element),
             isCompleted: ValueNotifier(false));
       }
     }
@@ -141,5 +142,15 @@ class GridProvider extends ChangeNotifier {
 
   int determineColumn(int number) {
     return number ~/ height;
+  }
+
+  List<UnmodifiableListView<int>> getMarkedAndCrossedTiles() {
+    UnmodifiableListView<int> marked = UnmodifiableListView(markedTiles);
+    UnmodifiableListView<int> crossed = UnmodifiableListView(crossedTiles);
+    return [marked, crossed];
+  }
+
+  void finishTheGame() {
+    game.clearGameState();
   }
 }

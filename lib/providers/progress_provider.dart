@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
@@ -47,6 +48,7 @@ class ProgressProvider extends ChangeNotifier {
       }
       for (Map map in maps) {
         completenessTracker[map['number']] = map['completed'] == 1;
+        print(map);
         firstTimeInit = false;
       }
     }
@@ -57,6 +59,16 @@ class ProgressProvider extends ChangeNotifier {
     await database.update('progress',{'completed':1},where: "number = $num",);
     completenessTracker[num] = true;
     notifyListeners();
+  }
+
+  void saveLevelProgress(int num, UnmodifiableListView markedTiles, UnmodifiableListView crossedTiles) async {
+    String marked = markedTiles.isNotEmpty ? markedTiles.join(',') : null;
+    String crossed = crossedTiles.isNotEmpty ? crossedTiles.join(',') : null;
+    await database.update('progress',{'marked':marked, 'crossed':crossed},where: "number = $num",);
+  }
+
+  void eraseLevelProgress(int num) async {
+    await database.update('progress',{'marked':null, 'crossed':null},where: "number = $num",);
   }
 
 }
