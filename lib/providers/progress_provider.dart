@@ -7,6 +7,7 @@ import 'package:chinese_picross/picross_files/picross_list.dart';
 
 class ProgressProvider extends ChangeNotifier {
   Database database;
+  bool firstTimeInit = true;
   List<bool> completenessTracker = List(picrossList.length);
 
   Future<Database> getDatabase() async {
@@ -22,24 +23,38 @@ class ProgressProvider extends ChangeNotifier {
   var dbDir = await getDatabasesPath();
   var path = p.join(dbDir, 'progress_db.db');
   deleteDatabase(path);
+  print('deleted');
 }
 
   Future<bool> initializeDatabase() async {
-    database = await getDatabase();
-    List<Map> maps = await database.query('progress');
-    if (maps.isEmpty) {
-      for (int i = 0; i < picrossList.length; i++) {
-        await database.insert('progress', ProgressModel(number: i, isCompleted: false).toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    // FirstTimeInit prevents method realization when notifyListeners is used
+    if (firstTimeInit) {
+      List<Map> maps;
+      try {
+        database = await getDatabase();
+        maps = await database.query('progress');
       }
-    }
-    for (Map map in maps) {
-      completenessTracker[map['number']] = map['completed'] == 1;
+      catch (e) {
+        print(e);
+        return false;
+      }
+      if (maps.isEmpty) {
+        for (int i = 0; i < picrossList.length; i++) {
+          await database.insert(
+              'progress', ProgressModel(number: i, isCompleted: false).toMap(),
+              conflictAlgorithm: ConflictAlgorithm.replace);
+        }
+      }
+      for (Map map in maps) {
+        completenessTracker[map['number']] = map['completed'] == 1;
+        firstTimeInit = false;
+      }
     }
     return true;
   }
 
   void markCompleted(int num) async {
-    database.update('progress',{'completed':1},where: "number = $num",);
+    await database.update('progress',{'completed':1},where: "number = $num",);
     completenessTracker[num] = true;
     notifyListeners();
   }

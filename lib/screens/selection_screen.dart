@@ -7,7 +7,7 @@ class SelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemCount: picrossList.length, itemBuilder: (BuildContext context, int index) {
+    return Scaffold(body: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), itemCount: picrossList.length, itemBuilder: (BuildContext context, int index) {
       return CharacterSelectionTile(index: index, description: picrossList[index].description,);
     }),);
   }

@@ -10,22 +10,31 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   Future<bool> _databaseLoaded;
+  Future<bool> initDb() async {
+    return await Provider.of<ProgressProvider>(context).initializeDatabase();
+  }
+
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      _databaseLoaded = initDb();
+    });
     return FutureBuilder<bool>(
       future: _databaseLoaded,
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot){
+      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         if (snapshot.hasData) {
           return Center(
             child: Container(
-              child: RaisedButton(onPressed: () async {
+              child: RaisedButton(onPressed: () {
      Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},),
             ),
           );
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {
-            _databaseLoaded = Provider.of<ProgressProvider>(context).initializeDatabase();
+          print('reached before init');
+
+            print('reached after init');
           return Text('Lelum polelum');
         }
       },

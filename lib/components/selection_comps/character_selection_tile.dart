@@ -15,6 +15,7 @@ class CharacterSelectionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(onTap: () {
       Navigator.push(context, MaterialPageRoute(builder: (context) => GameScreen(game: picrossList[index].game, gameNumber: index,)));
-    },child: Card(child: Column(children: [Text(Provider.of<ProgressProvider>(context).completenessTracker[index] ? description.character : '?'), Text(description.meaning)],),));
+      // Default value with ?? makes the app not crash during first usage
+    },child: Card(child: Column(children: [Text((Provider.of<ProgressProvider>(context).completenessTracker[index] ?? false) ? description.character : '?'), Text(description.meaning)],),));
   }
 }
