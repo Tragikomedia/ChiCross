@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
+import 'package:chinese_picross/providers/theme_provider.dart';
 import 'package:chinese_picross/screens/selection_screen.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -24,20 +25,29 @@ class _InitialScreenState extends State<InitialScreen> {
   
   @override
   Widget build(BuildContext context) {
+    // TODO put Scaffold etc above if
     return FutureBuilder<bool>(
       future: _databaseLoaded,
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         if (snapshot.hasData) {
-          return Center(
-            child: Container(
-              child: RaisedButton(onPressed: () {
-     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},),
+          return Scaffold(
+            backgroundColor: Theme.of(context).primaryColor,
+            body: Center(
+              child: Container(
+                child: Column(
+                  children: [RaisedButton(child: Text('Play', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: Theme.of(context).accentColor,onPressed: () {
+     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},), RaisedButton(child: Text('Color', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: Theme.of(context).accentColor, onPressed: () {
+       Provider.of<ThemeProvider>(context, listen: false).changeThemeNumber();
+                  },)],
+                ),
+              ),
             ),
           );
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {
-          return Text('Lelum polelum');
+          Provider.of<ThemeProvider>(context).loadTheme();
+          return Scaffold(body: Text('Lelum polelum'), backgroundColor: Theme.of(context).accentColor,);
         }
       },
     );

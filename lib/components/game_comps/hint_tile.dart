@@ -26,7 +26,7 @@ class HintTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
           decoration: BoxDecoration(
-              color: (number % 2 == 0) ? Colors.orangeAccent : Colors.yellow,
+              color: (number % 2 == 0) ? Theme.of(context).selectedRowColor : Theme.of(context).primaryColor,
               border: Border.all(color: Colors.black, width: 1.0)),
           child: (sort == HintSort.row)
               ? Row(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context))

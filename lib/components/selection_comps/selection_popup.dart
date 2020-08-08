@@ -8,7 +8,7 @@ class SelectionPopup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0),), backgroundColor: Colors.orangeAccent, child: StartGameSelection(gameNumber: gameNumber,),);
+    return Dialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0),), backgroundColor: Theme.of(context).colorScheme.secondary, child: StartGameSelection(gameNumber: gameNumber,),);
   }
 }
 

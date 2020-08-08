@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:chinese_picross/components/game_comps/hint_tile.dart';
 import 'package:chinese_picross/components/game_comps/game_tile.dart';
+import 'package:chinese_picross/components/game_comps/grid_corner_box.dart';
 import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 List<StaggeredTile> stagTiles(int width, int height) {
@@ -25,7 +26,7 @@ List<StaggeredTile> stagTiles(int width, int height) {
 List<Widget> gridTiles(int width, int height) {
   List<Widget> newList = [];
   // Top left box
-  newList.add(Container(decoration: BoxDecoration(color: Colors.yellow),child: FittedBox(fit: BoxFit.fill, child: Text('福', style: TextStyle(color: Colors.orange),),)));
+  newList.add(GridCornerBox());
   // Row hint tiles
   for (int i = 0; i < height; i++) {
     newList.add(HintTile(
