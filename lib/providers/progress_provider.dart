@@ -80,13 +80,11 @@ class ProgressProvider extends ChangeNotifier {
         results[0]['marked'].split(',').forEach((element) =>
             saveData[0].add(int.parse(element)));
       } catch (err) {
-        print('No marked tiles saved.');
       }
       try {
         results[0]['crossed'].split(',').forEach((element) =>
             saveData[1].add(int.parse(element)));
       } catch (err) {
-        print('No crossed tile saved.');
       }
       return saveData;
     }

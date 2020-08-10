@@ -33,7 +33,6 @@ class PreferencesProvider extends ChangeNotifier {
     _autosaveOn = !_autosaveOn;
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('autosave', _autosaveOn);
-    print(_autosaveOn);
   }
 
   bool get autosaveOn {
