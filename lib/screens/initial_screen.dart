@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
-import 'package:chinese_picross/providers/theme_provider.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/screens/selection_screen.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -11,16 +11,17 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   Future<bool> _databaseLoaded;
-  void initDb(BuildContext context) {
+  void initDbAndPref(BuildContext context) {
     setState(() {
       _databaseLoaded = Provider.of<ProgressProvider>(context,listen: false).initializeDatabase();
     });
+    Provider.of<PreferencesProvider>(context, listen: false).loadPreferences();
   }
   @override
   void initState() {
     super.initState();
     // It's the only not terrible way to link future builder to provider
-    WidgetsBinding.instance.addPostFrameCallback((_) => initDb(context));
+    WidgetsBinding.instance.addPostFrameCallback((_) => initDbAndPref(context));
   }
   
   @override
@@ -37,8 +38,11 @@ class _InitialScreenState extends State<InitialScreen> {
                 child: Column(
                   children: [RaisedButton(child: Text('Play', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: Theme.of(context).accentColor,onPressed: () {
      Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},), RaisedButton(child: Text('Color', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: Theme.of(context).accentColor, onPressed: () {
-       Provider.of<ThemeProvider>(context, listen: false).changeThemeNumber();
-                  },)],
+       Provider.of<PreferencesProvider>(context, listen: false).changeThemeNumber();
+                  },),
+                    RaisedButton(child: Text('Autosave', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: Theme.of(context).accentColor, onPressed: () {
+                      Provider.of<PreferencesProvider>(context, listen: false).toggleAutosave();
+                    },)],
                 ),
               ),
             ),
@@ -46,7 +50,6 @@ class _InitialScreenState extends State<InitialScreen> {
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {
-          Provider.of<ThemeProvider>(context).loadTheme();
           return Scaffold(body: Text('Lelum polelum'), backgroundColor: Theme.of(context).accentColor,);
         }
       },
