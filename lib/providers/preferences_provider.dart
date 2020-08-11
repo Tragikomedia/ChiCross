@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/themes/themes.dart';
+import 'package:chinese_picross/themes/n_themes.dart';
+import 'package:chinese_picross/utilities/models/theme_color_set.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferencesProvider extends ChangeNotifier {
@@ -25,7 +26,7 @@ class PreferencesProvider extends ChangeNotifier {
     await prefs.setInt('theme', _themeNumber);
   }
 
-  ThemeData get themeData {
+  ThemeColorSet get themeData {
     return themes[_themeNumber];
   }
 

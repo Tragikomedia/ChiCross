@@ -4,8 +4,10 @@ import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/components/game_comps/cross_icon.dart';
-import 'package:provider/provider.dart';
+import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/utilities/general_utils/enums.dart';
+import 'package:provider/provider.dart';
+
 
 class GameTile extends StatelessWidget {
   final int number;
@@ -15,10 +17,11 @@ class GameTile extends StatelessWidget {
   GameTile({@required this.number, @required this.height, @required this.width});
 
   Color determineTileColor(BuildContext context, TileSort tileSort, int number) {
+    var colorSet = ThemeManager.of(context).colorSet;
     if (tileSort == TileSort.marked) {
-      return Theme.of(context).accentColor;
+      return colorSet.secondaryColor;
     }
-    return (number ~/ height) % 2 == 0 ? Theme.of(context).primaryColor : Theme.of(context).selectedRowColor;
+    return (number ~/ height) % 2 == 0 ? colorSet.primaryColor : colorSet.intermediaryColor;
   }
 
   void saveData(BuildContext context) {

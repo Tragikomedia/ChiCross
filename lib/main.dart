@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/screens/initial_screen.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 
 void main() {
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       ChangeNotifierProvider(create: (context) => ProgressProvider(),
-    child: MaterialApp(
+    child: ThemeManager(colorSet: Provider.of<PreferencesProvider>(context).themeData,
+        child: MaterialApp(
       title: 'ChiCross',
-      theme: Provider.of<PreferencesProvider>(context).themeData,
-      home:  InitialScreen(),)
+      home: InitialScreen(),))
     );
   }
 }

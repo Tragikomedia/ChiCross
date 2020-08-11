@@ -1,3 +1,4 @@
+import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/components/game_comps/hint_tile_text.dart';
 import 'package:chinese_picross/utilities/models/hint.dart';
@@ -26,7 +27,7 @@ class HintTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
           decoration: BoxDecoration(
-              color: (number % 2 == 0) ? Theme.of(context).selectedRowColor : Theme.of(context).primaryColor,
+              color: (number % 2 == 0) ? ThemeManager.of(context).colorSet.intermediaryColor : ThemeManager.of(context).colorSet.primaryColor,
               border: Border.all(color: Colors.black, width: 1.0)),
           child: (sort == HintSort.row)
               ? Row(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context))
