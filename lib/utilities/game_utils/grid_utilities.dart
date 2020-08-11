@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:chinese_picross/components/game_comps/hint_tile.dart';
-import 'package:chinese_picross/components/game_comps/game_tile.dart';
-import 'package:chinese_picross/components/game_comps/grid_corner_box.dart';
+import 'package:chinese_picross/components/game_comps/hint/hint_tile.dart';
+import 'package:chinese_picross/components/game_comps/grid/game_tile.dart';
+import 'package:chinese_picross/components/game_comps/grid/grid_corner_box.dart';
 import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 List<StaggeredTile> stagTiles(int width, int height) {

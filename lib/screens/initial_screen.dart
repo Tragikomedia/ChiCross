@@ -35,16 +35,18 @@ class _InitialScreenState extends State<InitialScreen> {
         if (snapshot.hasData) {
           return Scaffold(
             backgroundColor: colorSet.primaryColor,
-            body: Center(
-              child: Container(
-                child: Column(
-                  children: [RaisedButton(child: Text('Play', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor,onPressed: () {
+            body: SafeArea(
+              child: Center(
+                child: Container(
+                  child: Column(
+                    children: [RaisedButton(child: Text('Play', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor,onPressed: () {
      Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},), RaisedButton(child: Text('Color', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
        Provider.of<PreferencesProvider>(context, listen: false).changeThemeNumber();
-                  },),
-                    RaisedButton(child: Text('Autosave', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-                      Provider.of<PreferencesProvider>(context, listen: false).toggleAutosave();
-                    },)],
+                    },),
+                      RaisedButton(child: Text('Autosave', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
+                        Provider.of<PreferencesProvider>(context, listen: false).toggleAutosave();
+                      },)],
+                  ),
                 ),
               ),
             ),
