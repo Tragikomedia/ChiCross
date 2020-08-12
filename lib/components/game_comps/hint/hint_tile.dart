@@ -14,7 +14,7 @@ class HintTile extends StatelessWidget {
 
   HintTile({@required this.number, @required this.sort, @required this.height, @required this.width});
 
-  List<Widget> getHintNumbers(int number, BuildContext context) {
+  List<Widget> _getHintNumbers(int number, BuildContext context) {
     List<Widget> hintList = [];
     Hint hintTile = sort == HintSort.row ? Provider.of<GridProvider>(context, listen: false).hintRows[number] : Provider.of<GridProvider>(context, listen: false).hintColumns[number];
     for(int hint in hintTile.hintNums) {
@@ -26,7 +26,7 @@ class HintTile extends StatelessWidget {
     return hintList;
   }
 
-  Border determineHintTileBorder(BuildContext context, int number, HintSort sort, Color borderColor) {
+  Border _determineHintTileBorder(BuildContext context, int number, HintSort sort, Color borderColor) {
     if (sort == HintSort.column) {
       if (number != width - 1) {
         return Border(top: BorderSide(width: 3.0, color: borderColor),
@@ -57,10 +57,10 @@ class HintTile extends StatelessWidget {
     return Container(
           decoration: BoxDecoration(
               color: (number % 2 == 0) ? colorSet.intermediaryColor : colorSet.primaryColor,
-              border: determineHintTileBorder(context, number, sort, colorSet.gridNumbersColor)),
+              border: _determineHintTileBorder(context, number, sort, colorSet.gridNumbersColor)),
           child: (sort == HintSort.row)
-              ? Row(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context))
-              : Column(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context)),
+              ? Row(mainAxisAlignment: MainAxisAlignment.end,children: _getHintNumbers(number, context))
+              : Column(mainAxisAlignment: MainAxisAlignment.end,children: _getHintNumbers(number, context)),
         );
   }
 }

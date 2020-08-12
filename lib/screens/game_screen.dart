@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/components/game_comps/grid/grid_box.dart';
-import 'package:chinese_picross/components/game_comps/finished_game/victory_view.dart';
+import 'package:chinese_picross/components/game_comps/finished_game/finished_game_view.dart';
 import 'package:chinese_picross/components/game_comps/top_bar/information_bar.dart';
 import 'package:chinese_picross/components/game_comps/game_app_bar/game_app_bar.dart';
 
@@ -32,7 +32,7 @@ class _GameScreenState extends State<GameScreen> {
         child: ValueListenableBuilder<bool>(valueListenable: gridProvider.isFinished,
         builder: (BuildContext context, bool isFinished, Widget child) {
         return isFinished
-            ? VictoryView(gameNumber: widget.gameNumber,)
+            ? FinishedGameView(gameNumber: widget.gameNumber,)
             : Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
           InformationBar(gameNumber: widget.gameNumber, mainColor: colorSet.primaryColor, sideColor: colorSet.secondaryColor,),
