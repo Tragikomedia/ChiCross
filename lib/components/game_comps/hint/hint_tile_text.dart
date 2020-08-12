@@ -20,7 +20,7 @@ class HintTileText extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(valueListenable: hintTile.isCompleted, builder: (context, isCompleted, child) {
       return Text(hint.toString(),
-          style: TextStyle(color: isCompleted ? Colors.grey : ThemeManager.of(context).colorSet.secondaryColor,
+          style: TextStyle(color: isCompleted ? Colors.grey : ThemeManager.of(context).colorSet.gridNumbersColor,
             fontSize: gameFontSize(context, width, height),
           fontFamily: 'Cyrulik'),);
     });

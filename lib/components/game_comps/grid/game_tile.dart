@@ -16,12 +16,24 @@ class GameTile extends StatelessWidget {
 
   GameTile({@required this.number, @required this.height, @required this.width});
 
-  Color determineTileColor(BuildContext context, TileSort tileSort, int number) {
+  Color _determineTileColor(BuildContext context, TileSort tileSort, int number) {
     var colorSet = ThemeManager.of(context).colorSet;
     if (tileSort == TileSort.marked) {
       return colorSet.secondaryColor;
     }
     return (number ~/ height) % 2 == 0 ? colorSet.primaryColor : colorSet.intermediaryColor;
+  }
+
+  Border _determineTileBorder(BuildContext context) {
+    int tileVerticalPosition = number % height; 
+    int tileHorizontalPosition = number ~/ width;
+    var thickBorderColor = ThemeManager.of(context).colorSet.gridNumbersColor;
+    return Border(
+      top: (tileVerticalPosition == height/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
+      right: (tileHorizontalPosition == width/2 - 1) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
+      left: (tileHorizontalPosition == width/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
+      bottom: (tileVerticalPosition == height/2 - 1 || tileVerticalPosition == height - 1) ? BorderSide(color: thickBorderColor, width: (tileVerticalPosition == height/2 - 1) ? 1.5 : 3.0) : BorderSide(color: Colors.black, width: 0.5)
+    );
   }
 
   void saveData(BuildContext context) {
@@ -36,7 +48,7 @@ class GameTile extends StatelessWidget {
     GridProvider gridProvider = Provider.of<GridProvider>(context, listen: false);
       return GestureDetector(
         onTap: () {
-          gridProvider.checkTileCorrect(number);
+          gridProvider.checkIfTileIsCorrect(number);
           saveData(context);
         },
         onLongPress: () {
@@ -51,8 +63,8 @@ class GameTile extends StatelessWidget {
           builder: (context, tileSort, child) {
           return Container(
           decoration: BoxDecoration(
-              color: determineTileColor(context, tileSort, number),
-              border: Border.all(color: Colors.black, width: 0.5)),
+              color: _determineTileColor(context, tileSort, number),
+              border: _determineTileBorder(context)),
           child: tileSort == TileSort.crossed ? CrossIcon(height: height, width: width,) : SizedBox.shrink(),
         );}),
       );

@@ -6,18 +6,20 @@ import 'package:chinese_picross/utilities/models/game.dart';
 import 'package:chinese_picross/utilities/general_utils/enums.dart';
 
 class GridProvider extends ChangeNotifier {
-  GridProvider({@required this.game, this.loadSaveFile=false, this.saveData})
+  GridProvider({@required this.game, @required this.lives, this.loadSaveFile=false, this.saveData})
       : hintColumns = List(game.width),
         hintRows = List(game.height),
         gameTiles = List(game.width * game.height),
         correctTiles = game.correctTiles,
         height = game.height,
         width = game.width,
+        livesLeft = ValueNotifier(lives),
         numberOfCorrect = game.correctTiles.length;
 
   final Game game;
   final int height;
   final int width;
+  final int lives;
   final int numberOfCorrect;
   final bool loadSaveFile;
   final List<int> correctTiles;
@@ -26,25 +28,42 @@ class GridProvider extends ChangeNotifier {
   List hintColumns;
   List hintRows;
   List<ValueNotifier> gameTiles;
+  ValueNotifier<int> livesLeft;
 
   int numberOfMarked = 0;
+  bool isVictorious = false;
   ValueNotifier<bool> isFinished = ValueNotifier(false);
   List<int> markedTiles = [];
   List<int> crossedTiles = [];
 
-  void checkTileCorrect(int number) {
+  void checkIfTileIsCorrect(int number) {
     if (!crossedTiles.contains(number) && !markedTiles.contains(number)) {
       if (correctTiles.contains(number)) {
-        markedTiles.add(number);
-        gameTiles[number].value = TileSort.marked;
-        hintRows[determineRow(number)].updateMarkedTiles();
-        hintColumns[determineColumn(number)].updateMarkedTiles();
-        numberOfMarked++;
-        if (numberOfCorrect == numberOfMarked) {
-          isFinished.value = true;
-        }
+        handleCorrectTile(number);
       } else {
-        toggleCrossed(number);
+        handleIncorrectTile(number);
+      }
+    }
+  }
+
+  void handleCorrectTile(int number) {
+    markedTiles.add(number);
+    gameTiles[number].value = TileSort.marked;
+    hintRows[determineRow(number)].updateMarkedTiles();
+    hintColumns[determineColumn(number)].updateMarkedTiles();
+    numberOfMarked++;
+    if (numberOfCorrect == numberOfMarked) {
+      isVictorious = true;
+      isFinished.value = true;
+    }
+  }
+
+  void handleIncorrectTile(int number) {
+    toggleCrossed(number);
+    if (livesLeft.value != -1) {
+      livesLeft.value--;
+      if (livesLeft.value == 0) {
+        isFinished.value = true;
       }
     }
   }
@@ -71,7 +90,7 @@ class GridProvider extends ChangeNotifier {
     initializeGameTiles();
     if (loadSaveFile) {
       for (int tile in saveData[0]) {
-        checkTileCorrect(tile);
+        checkIfTileIsCorrect(tile);
       }
       for (int tile in saveData[1]) {
         toggleCrossed(tile);

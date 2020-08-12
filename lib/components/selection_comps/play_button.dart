@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/screens/game_screen.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:provider/provider.dart';
 
 class PlayButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class PlayButton extends StatelessWidget {
     return RaisedButton(child: Text((saveData == null) ? 'PLAY' : 'FROM SAVE') ,onPressed: () {
       Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeNotifierProvider(create: (context) => GridProvider(
-          game: picrossList[gameNumber].game, loadSaveFile: (saveData == null) ? false : true, saveData: saveData),child:GameScreen(gameNumber: gameNumber,))));
+          game: picrossList[gameNumber].game, lives: Provider.of<PreferencesProvider>(context, listen: false).lives, loadSaveFile: (saveData == null) ? false : true, saveData: saveData),child:GameScreen(gameNumber: gameNumber,))));
     },);
   }
 }

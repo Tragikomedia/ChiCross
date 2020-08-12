@@ -6,6 +6,8 @@ import 'package:sqflite/sqflite.dart';
 import 'package:chinese_picross/utilities/models/progress_model.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
 
+
+// TODO add saves maybe
 class ProgressProvider extends ChangeNotifier {
   Database database;
   bool firstTimeInit = true;

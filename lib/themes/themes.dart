@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:chinese_picross/utilities/general_utils/color_themes.dart';
+import 'package:chinese_picross/utilities/models/theme_color_set.dart';
 
-List<ThemeData> themes = [
-ThemeData(primaryColor: klWhite, accentColor: klSpaceCherry, selectedRowColor: klWhiteDark),
-ThemeData(primaryColor: klSweetCorn, accentColor: klToffee, selectedRowColor: klSweetCornDark)];
+List<ThemeColorSet> themes = [
+  ThemeColorSet(primaryColor: klWhite, secondaryColor: klSpaceCherry, intermediaryColor: klWhiteDark, gridNumbersColor: klSpaceCherryDark),
+  ThemeColorSet(primaryColor: klSweetCorn, secondaryColor: klToffee, intermediaryColor: klSweetCornDark, gridNumbersColor: klToffeeDark)];

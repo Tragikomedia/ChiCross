@@ -26,16 +26,41 @@ class HintTile extends StatelessWidget {
     return hintList;
   }
 
+  Border determineHintTileBorder(BuildContext context, int number, HintSort sort, Color borderColor) {
+    if (sort == HintSort.column) {
+      if (number != width - 1) {
+        return Border(top: BorderSide(width: 3.0, color: borderColor),
+            right: BorderSide(width: 1.0, color: borderColor),
+            left: BorderSide(width: 1.0, color: borderColor),
+            bottom: BorderSide(width: 2, color: borderColor));
+      } else {
+        return Border(top: BorderSide(width: 3.0, color: borderColor),
+            left: BorderSide(width: 1.0, color: borderColor),
+            bottom: BorderSide(width: 2, color: borderColor));
+      }
+    } else {
+      if (number != height - 1) {
+        return Border(top: BorderSide(width: 1.0, color: borderColor),
+            right: BorderSide(width: 2, color: borderColor),
+            bottom: BorderSide(width: 1.0, color: borderColor));
+      } else {
+        return Border(top: BorderSide(width: 1.0, color: borderColor),
+            right: BorderSide(width: 2, color: borderColor),
+            bottom: BorderSide(width: 3.0, color: borderColor));
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    var colorSet = ThemeManager.of(context).colorSet;
     return Container(
           decoration: BoxDecoration(
-              color: (number % 2 == 0) ? ThemeManager.of(context).colorSet.intermediaryColor : ThemeManager.of(context).colorSet.primaryColor,
-              border: Border.all(color: Colors.black, width: 1.0)),
+              color: (number % 2 == 0) ? colorSet.intermediaryColor : colorSet.primaryColor,
+              border: determineHintTileBorder(context, number, sort, colorSet.gridNumbersColor)),
           child: (sort == HintSort.row)
               ? Row(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context))
               : Column(mainAxisAlignment: MainAxisAlignment.end,children: getHintNumbers(number, context)),
         );
-
   }
 }

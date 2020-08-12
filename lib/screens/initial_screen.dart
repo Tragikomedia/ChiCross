@@ -45,6 +45,9 @@ class _InitialScreenState extends State<InitialScreen> {
                     },),
                       RaisedButton(child: Text('Autosave', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
                         Provider.of<PreferencesProvider>(context, listen: false).toggleAutosave();
+                      },),
+                      RaisedButton(child: Text('Lives: ${Provider.of<PreferencesProvider>(context).lives}', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
+                        Provider.of<PreferencesProvider>(context, listen: false).changeNumberOfLives();
                       },)],
                   ),
                 ),

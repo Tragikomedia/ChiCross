@@ -21,7 +21,7 @@ class InformationBar extends StatelessWidget {
           Divider(color: sideColor, thickness: 3.0,),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(child: ProgressColumn(mainColor: mainColor, backgroundColor: sideColor,)),
+              Expanded(child: ProgressRow(mainColor: mainColor, backgroundColor: sideColor,)),
               SaveButton(gameNumber: gameNumber,)
             ],),
           Divider(color: sideColor, thickness: 3.0,),

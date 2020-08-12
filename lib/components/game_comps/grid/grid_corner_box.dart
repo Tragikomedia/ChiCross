@@ -4,13 +4,17 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 class GridCornerBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var colorSet = ThemeManager.of(context).colorSet;
     return Container(
-        decoration: BoxDecoration(color: ThemeManager.of(context).colorSet.primaryColor),
+        decoration: BoxDecoration(color: colorSet.primaryColor,
+        border: Border(top: BorderSide(width: 3.0, color: colorSet.gridNumbersColor),
+        right: BorderSide(width: 2.0, color: colorSet.gridNumbersColor),
+        bottom: BorderSide(width: 2.0, color: colorSet.gridNumbersColor))),
         child: FittedBox(
           fit: BoxFit.fill,
           child: Text(
             '福',
-            style: TextStyle(color: ThemeManager.of(context).colorSet.secondaryColor,
+            style: TextStyle(color: colorSet.secondaryColor,
             fontFamily: 'MaShanZheng'),
           ),
         ));

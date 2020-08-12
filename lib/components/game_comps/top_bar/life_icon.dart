@@ -7,12 +7,13 @@ import 'package:provider/provider.dart';
 
 class LifeIcon extends StatelessWidget {
   final Color iconColor;
+  final Color iconBackgroundColor;
 
-  LifeIcon({@required this.iconColor, });
+  LifeIcon({@required this.iconColor, @required this.iconBackgroundColor});
 
   @override
   Widget build(BuildContext context) {
     var gameProv = Provider.of<GridProvider>(context, listen: false).game;
-    return Text('心', style: TextStyle(color: iconColor, fontSize: informationBarFontSize(context, gameProv.width, gameProv.height) + kInformationBarFontModifier, fontFamily: 'MaShanZheng'),);
+    return Container(margin:EdgeInsets.symmetric(horizontal: 2.0) ,decoration: BoxDecoration(color: iconBackgroundColor, shape: BoxShape.circle),  child: Text('心', style: TextStyle(color: iconColor, fontSize: informationBarFontSize(context, gameProv.width, gameProv.height) + kInformationBarFontModifier, fontFamily: 'MaShanZheng'),));
   }
 }
