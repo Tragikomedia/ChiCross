@@ -27,7 +27,7 @@ class GameTile extends StatelessWidget {
   Border _determineTileBorder(BuildContext context) {
     int tileVerticalPosition = number % height; 
     int tileHorizontalPosition = number ~/ width;
-    var thickBorderColor = ThemeManager.of(context).colorSet.gridNumbersColor;
+    var thickBorderColor = ThemeManager.of(context).colorSet.strongestColor;
     return Border(
       top: (tileVerticalPosition == height/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
       right: (tileHorizontalPosition == width/2 - 1) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),

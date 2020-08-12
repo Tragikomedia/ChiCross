@@ -9,6 +9,7 @@ class FinishedGameView extends StatelessWidget {
 
   FinishedGameView({@required this.gameNumber});
 
+  // TODO Make it stateful and add something to erase save
   @override
   Widget build(BuildContext context) {
     var progressProvider = Provider.of<ProgressProvider>(context, listen: false);

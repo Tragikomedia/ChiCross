@@ -26,7 +26,7 @@ class _GameScreenState extends State<GameScreen> {
     var gridProvider = Provider.of<GridProvider>(context, listen: false);
     var colorSet = ThemeManager.of(context).colorSet;
     return Scaffold(appBar: PreferredSize(preferredSize: Size.fromHeight(40.0),
-    child: GameAppBar(gameNumber: widget.gameNumber, textColor: colorSet.gridNumbersColor, backgroundColor: colorSet.intermediaryColor,)),
+    child: GameAppBar(gameNumber: widget.gameNumber, textColor: colorSet.strongestColor, backgroundColor: colorSet.intermediaryColor,)),
     backgroundColor: colorSet.primaryColor,
       body: SafeArea(
         child: ValueListenableBuilder<bool>(valueListenable: gridProvider.isFinished,

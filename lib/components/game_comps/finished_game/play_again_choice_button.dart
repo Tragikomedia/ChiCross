@@ -4,6 +4,7 @@ import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/screens/game_screen.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
+import 'package:chinese_picross/utilities/general_utils/constants.dart';
 import 'package:provider/provider.dart';
 
 class PlayAgainChoiceButton extends StatelessWidget {
@@ -40,7 +41,9 @@ class PlayAgainChoiceButton extends StatelessWidget {
         child: Text(
           gameNumber != null ? 'Yes' : 'No',
           style: TextStyle(
-              color: ThemeManager.of(context).colorSet.intermediaryColor),
+              color: ThemeManager.of(context).colorSet.intermediaryColor,
+          fontSize: kPlayAgainButtonFontSize,
+          fontFamily: 'Cyrulik'),
         ),
       ),
     );

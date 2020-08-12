@@ -7,9 +7,9 @@ class GridCornerBox extends StatelessWidget {
     var colorSet = ThemeManager.of(context).colorSet;
     return Container(
         decoration: BoxDecoration(color: colorSet.primaryColor,
-        border: Border(top: BorderSide(width: 3.0, color: colorSet.gridNumbersColor),
-        right: BorderSide(width: 2.0, color: colorSet.gridNumbersColor),
-        bottom: BorderSide(width: 2.0, color: colorSet.gridNumbersColor))),
+        border: Border(top: BorderSide(width: 3.0, color: colorSet.strongestColor),
+        right: BorderSide(width: 2.0, color: colorSet.strongestColor),
+        bottom: BorderSide(width: 2.0, color: colorSet.strongestColor))),
         child: FittedBox(
           fit: BoxFit.fill,
           child: Text(

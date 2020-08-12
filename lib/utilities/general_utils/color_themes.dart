@@ -10,3 +10,7 @@ const Color klSweetCornDark = Color(0xFFE3DFCF);
 const Color klToffee = Color(0xFF96816F);
 const Color klToffeeDark = Color(0xFF66513F);
 
+const Color klFairOrange = Color(0xFFFFE1C6);
+const Color klFairOrangeDark = Color(0xFFDFC1A6);
+const Color klPurpleBlue = Color(0xFF1B3D9F);
+const Color klPurpleBlueDark = Color(0xFF08196A);

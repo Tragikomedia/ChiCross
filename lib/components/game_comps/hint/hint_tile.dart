@@ -57,7 +57,7 @@ class HintTile extends StatelessWidget {
     return Container(
           decoration: BoxDecoration(
               color: (number % 2 == 0) ? colorSet.intermediaryColor : colorSet.primaryColor,
-              border: _determineHintTileBorder(context, number, sort, colorSet.gridNumbersColor)),
+              border: _determineHintTileBorder(context, number, sort, colorSet.strongestColor)),
           child: (sort == HintSort.row)
               ? Row(mainAxisAlignment: MainAxisAlignment.end,children: _getHintNumbers(number, context))
               : Column(mainAxisAlignment: MainAxisAlignment.end,children: _getHintNumbers(number, context)),

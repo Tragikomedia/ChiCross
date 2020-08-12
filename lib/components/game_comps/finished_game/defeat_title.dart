@@ -6,7 +6,7 @@ class DefeatTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0) ,
-        color: ThemeManager.of(context).colorSet.gridNumbersColor,
+        color: ThemeManager.of(context).colorSet.strongestColor,
         child: Text('KLĘSKA',
           style: TextStyle(fontSize: kDefeatTitleFontSize,
               fontFamily: 'Cyrulik',
