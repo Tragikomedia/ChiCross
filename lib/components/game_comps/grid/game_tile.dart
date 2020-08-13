@@ -38,8 +38,8 @@ class GameTile extends StatelessWidget {
 
   void saveData(BuildContext context) {
     if (Provider.of<PreferencesProvider>(context,listen: false).autosaveOn){
-      List<UnmodifiableListView<int>> tilesToSave = Provider.of<GridProvider>(context, listen: false).getMarkedAndCrossedTiles();
-      Provider.of<ProgressProvider>(context, listen: false).saveLevelProgress(Provider.of<GridProvider>(context, listen: false).game.gameNumber, tilesToSave[0], tilesToSave[1]);
+      List saveData = Provider.of<GridProvider>(context, listen: false).getDataToSave();
+      Provider.of<ProgressProvider>(context, listen: false).saveLevelProgress(Provider.of<GridProvider>(context, listen: false).game.gameNumber, saveData[2], saveData[0], saveData[1]);
     }
   }
 

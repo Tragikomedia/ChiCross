@@ -48,6 +48,9 @@ class _InitialScreenState extends State<InitialScreen> {
                       },),
                       RaisedButton(child: Text('Lives: ${Provider.of<PreferencesProvider>(context).lives}', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
                         Provider.of<PreferencesProvider>(context, listen: false).changeNumberOfLives();
+                      },),
+                      RaisedButton(child: Text('Erase DB', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
+                        Provider.of<ProgressProvider>(context, listen: false).deleteDb();
                       },)],
                   ),
                 ),

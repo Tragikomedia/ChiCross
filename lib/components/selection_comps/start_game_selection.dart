@@ -13,7 +13,7 @@ class StartGameSelection extends StatefulWidget {
 }
 
 class _StartGameSelectionState extends State<StartGameSelection> {
-  Future<List<List<int>>> _saveState;
+  Future<List> _saveState;
 
   void loadSaveState(BuildContext context) {
     setState(() {
@@ -29,7 +29,7 @@ class _StartGameSelectionState extends State<StartGameSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(future: _saveState, builder: (BuildContext context, AsyncSnapshot<List<List<int>>> snapshot){
+    return FutureBuilder(future: _saveState, builder: (BuildContext context, AsyncSnapshot<List> snapshot){
       if (snapshot.hasData && snapshot.data.isNotEmpty) {
         return Row(children: [
           PlayButton(gameNumber: widget.gameNumber,),

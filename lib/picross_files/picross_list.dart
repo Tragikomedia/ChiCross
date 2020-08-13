@@ -38,4 +38,11 @@ List<Picross> picrossList = [
       ),
       description: Description(
           character: 'A', chinesePronunciation: 'ba', meaning: 'Nothing')),
+  Picross(number: 5,
+      game: Game(
+        gameNumber: 5,
+        correctTiles: [3, 5, 12, 13, 15, 16, 17, 18, 19, 22, 24, 32, 34, 57, 60, 61, 62, 63, 65, 67, 68, 70, 71, 73, 75, 77, 79, 80, 81, 83, 85, 86, 87, 88, 89, 90, 91, 92, 93, 95, 97],
+      ),
+      description: Description(
+          character: '得', chinesePronunciation: 'dé', meaning: 'Obtain')),
 ];

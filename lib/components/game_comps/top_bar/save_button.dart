@@ -19,8 +19,8 @@ class SaveButton extends StatelessWidget {
         child: TopText(text: 'SAVE', color: ThemeManager.of(context).colorSet.primaryColor,),
       ),
       onPressed: () {
-      List<UnmodifiableListView<int>> tilesToSave = Provider.of<GridProvider>(context, listen: false).getMarkedAndCrossedTiles();
-      Provider.of<ProgressProvider>(context, listen: false).saveLevelProgress(gameNumber, tilesToSave[0], tilesToSave[1]);
+      List saveData = Provider.of<GridProvider>(context, listen: false).getDataToSave();
+      Provider.of<ProgressProvider>(context, listen: false).saveLevelProgress(gameNumber, saveData[2], saveData[0], saveData[1]);
     },);
   }
 }

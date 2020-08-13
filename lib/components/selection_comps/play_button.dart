@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 class PlayButton extends StatelessWidget {
   final int gameNumber;
-  final List<List<int>> saveData;
+  final List saveData;
 
   PlayButton({@required this.gameNumber, this.saveData});
 
@@ -16,7 +16,9 @@ class PlayButton extends StatelessWidget {
     return RaisedButton(child: Text((saveData == null) ? 'PLAY' : 'FROM SAVE') ,onPressed: () {
       Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeNotifierProvider(create: (context) => GridProvider(
-          game: picrossList[gameNumber].game, lives: Provider.of<PreferencesProvider>(context, listen: false).lives, loadSaveFile: (saveData == null) ? false : true, saveData: saveData),child:GameScreen(gameNumber: gameNumber,))));
+          game: picrossList[gameNumber].game, lives: (saveData == null) ? Provider.of<PreferencesProvider>(context, listen: false).lives : saveData[2],
+          loadSaveFile: (saveData == null) ? false : true,
+          saveData: saveData),child:GameScreen(gameNumber: gameNumber,))));
     },);
   }
 }

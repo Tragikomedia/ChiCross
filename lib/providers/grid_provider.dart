@@ -23,7 +23,7 @@ class GridProvider extends ChangeNotifier {
   final int numberOfCorrect;
   final bool loadSaveFile;
   final List<int> correctTiles;
-  final List<List<int>> saveData;
+  final List saveData;
 
   List hintColumns;
   List hintRows;
@@ -174,9 +174,9 @@ class GridProvider extends ChangeNotifier {
     return number ~/ height;
   }
 
-  List<UnmodifiableListView<int>> getMarkedAndCrossedTiles() {
+  List getDataToSave() {
     UnmodifiableListView<int> marked = UnmodifiableListView(markedTiles);
     UnmodifiableListView<int> crossed = UnmodifiableListView(crossedTiles);
-    return [marked, crossed];
+    return [marked, crossed, livesLeft.value];
   }
 }

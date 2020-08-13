@@ -4,25 +4,39 @@ import 'package:chinese_picross/components/game_comps/finished_game/defeat_view.
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 
-class FinishedGameView extends StatelessWidget {
+class FinishedGameView extends StatefulWidget {
   final int gameNumber;
 
   FinishedGameView({@required this.gameNumber});
 
-  // TODO Make it stateful and add something to erase save
+  @override
+  _FinishedGameViewState createState() => _FinishedGameViewState();
+}
+
+class _FinishedGameViewState extends State<FinishedGameView> {
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      var progressProvider = Provider.of<ProgressProvider>(context, listen: false);
+      if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
+        progressProvider.markCompleted(widget.gameNumber);
+      }
+      progressProvider.eraseLevelProgress(widget.gameNumber);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var progressProvider = Provider.of<ProgressProvider>(context, listen: false);
     if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
       return Column(children: [
         Text('Victory'),
         RaisedButton(child: Text('Go back'), onPressed: () {
-          progressProvider.markCompleted(gameNumber);
-          progressProvider.eraseLevelProgress(gameNumber);
           Navigator.pop(context);
         },)
       ]);
     }
-    return DefeatView(gameNumber: gameNumber);
+    return DefeatView(gameNumber: widget.gameNumber);
   }
 }
