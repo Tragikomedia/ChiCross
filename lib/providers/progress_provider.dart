@@ -53,6 +53,7 @@ class ProgressProvider extends ChangeNotifier {
         firstTimeInit = false;
       }
     }
+    notifyListeners();
     return true;
   }
 

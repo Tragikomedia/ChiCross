@@ -8,6 +8,7 @@ import 'package:chinese_picross/components/game_comps/grid/grid_box.dart';
 import 'package:chinese_picross/components/game_comps/finished_game/finished_game_view.dart';
 import 'package:chinese_picross/components/game_comps/top_bar/information_bar.dart';
 import 'package:chinese_picross/components/game_comps/game_app_bar/game_app_bar.dart';
+import 'package:chinese_picross/utilities/general_utils/constants.dart';
 
 
 class GameScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     var gridProvider = Provider.of<GridProvider>(context, listen: false);
     var colorSet = ThemeManager.of(context).colorSet;
-    return Scaffold(appBar: PreferredSize(preferredSize: Size.fromHeight(40.0),
+    return Scaffold(appBar: PreferredSize(preferredSize: Size.fromHeight(kPreferredAppBarHeight),
     child: GameAppBar(gameNumber: widget.gameNumber, textColor: colorSet.strongestColor, backgroundColor: colorSet.intermediaryColor,)),
     backgroundColor: colorSet.primaryColor,
       body: SafeArea(

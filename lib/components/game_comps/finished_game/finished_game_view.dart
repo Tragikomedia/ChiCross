@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/components/game_comps/finished_game/defeat_view.dart';
+import 'package:chinese_picross/components/game_comps/finished_game/victory_view.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 
@@ -30,12 +31,7 @@ class _FinishedGameViewState extends State<FinishedGameView> {
   @override
   Widget build(BuildContext context) {
     if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
-      return Column(children: [
-        Text('Victory'),
-        RaisedButton(child: Text('Go back'), onPressed: () {
-          Navigator.pop(context);
-        },)
-      ]);
+      return VictoryView(gameNumber: widget.gameNumber,);
     }
     return DefeatView(gameNumber: widget.gameNumber);
   }

@@ -17,7 +17,7 @@ List<Picross> picrossList = [
         gameNumber: 1,
       ),
       description: Description(
-          character: 'A', chinesePronunciation: 'ba', meaning: 'Nothing')),
+          character: 'A', chinesePronunciation: 'ba', meaning: 'Hajle Selassie')),
   Picross(number: 2,
       game: Game(gameNumber: 2,
         correctTiles: [0, 1, 8, 9, 10, 11, 18, 19, 20, 21, 28, 29, 30 ,31, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,54,55,56,57,58,59,60, 61, 68,69,70,71,78,79,80,81,88,89,90,91,98,99],
