@@ -7,12 +7,12 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 class CharacterTile extends StatelessWidget {
   final int characterNumber;
   final String character;
-  final String pronunciation;
   final String meaning;
+  final bool showDescription;
+  final double fontSizeModifier;
 
-  CharacterTile({@required this.characterNumber}):
+  CharacterTile({@required this.characterNumber, this.fontSizeModifier = 1, this.showDescription = true}):
         character = picrossList[characterNumber].description.character,
-        pronunciation = picrossList[characterNumber].description.chinesePronunciation,
         meaning = picrossList[characterNumber].description.meaning;
 
   @override
@@ -22,8 +22,10 @@ class CharacterTile extends StatelessWidget {
       color: colorSet.secondaryColor,
       child: Column(
       children: [
-        BigFancyCharacter(character: character, color: colorSet.primaryColor,),
-        CharacterDescription(text: pronunciation, color: colorSet.intermediaryColor,),
-      CharacterDescription(text: meaning, color: colorSet.primaryColor,)],),);
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+          child: BigFancyCharacter(character: character, color: colorSet.primaryColor, fontSizeModifier: fontSizeModifier,),
+        ),
+      showDescription ? CharacterDescription(text: meaning, color: colorSet.primaryColor,) : SizedBox.shrink()],),);
   }
 }

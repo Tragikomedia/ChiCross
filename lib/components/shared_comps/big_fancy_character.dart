@@ -5,14 +5,15 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 class BigFancyCharacter extends StatelessWidget {
   final String character;
   final Color color;
+  final double fontSizeModifier;
 
-  BigFancyCharacter({@required this.character, @required this.color});
+  BigFancyCharacter({@required this.character, @required this.color, @required this.fontSizeModifier});
 
   @override
   Widget build(BuildContext context) {
     return Text(character,
       style: TextStyle(
-        fontSize: kBigFancyCharacterFontSize,
+        fontSize: kBigFancyCharacterFontSize * fontSizeModifier,
         fontFamily: 'MaShanZheng',
         color: color
       ),);

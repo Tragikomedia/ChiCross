@@ -6,6 +6,7 @@ const double kCharacterDescriptionFontSize = 13.0;
 const double kLeadingCharacterFontSize = 29.0;
 const double kSelectionTileTextFontSize = 23.0;
 const double kGeneralAppBarFontSize = 28.0;
+const double kDescriptionTextFontSize = 26.0;
 
 const double kPreferredAppBarHeight = 40.0;
 
