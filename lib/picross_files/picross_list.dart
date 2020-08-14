@@ -121,4 +121,47 @@ meaning: 'Taxi driver'
             word: '出租车司机',
             meaning: 'Taxi driver'
         ),]),
+  Picross(number: 6,
+      game: Game(
+        gameNumber: 6,
+        correctTiles: [7, 8, 13, 14, 16, 17, 21, 22, 24, 26, 31, 34, 38, 39, 41, 44, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 64, 70, 74, 75, 76, 80, 84, 86, 87, 90, 94, 97, 98]
+      ),
+      description: Description(
+          character: '乐', chinesePronunciation: 'lè', meaning: 'Pleasure'),
+      examples: [
+        Example(
+          word: '快乐',
+          meaning: 'Happy'
+      ),
+        Example(
+            word: '乐趣',
+            meaning: 'Joy'
+        ),
+        Example(
+            word: '乐观',
+            meaning: 'Optimistic'
+        ),]),
+  Picross(number: 7,
+      game: Game(
+          gameNumber: 7,
+          correctTiles: [1, 3, 5, 10, 13, 14, 15, 16, 17, 18, 19, 21, 23, 25, 29, 31, 35, 38, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 64, 65, 66, 69, 70, 72, 74, 76, 77, 80, 82, 84, 87, 88, 90, 91, 92, 93, 94, 97, 99]
+      ),
+      description: Description(
+          character: '银', chinesePronunciation: 'yín', meaning: 'Silver'),
+      examples: [
+        Example(
+            word: '银行',
+            meaning: 'Bank'
+        ),
+        Example(
+            word: '银河',
+            meaning: 'Milky Way'
+        ),
+        Example(
+            word: '银幕',
+            meaning: 'Screen'
+        ),]),
 ];
+
+
+
