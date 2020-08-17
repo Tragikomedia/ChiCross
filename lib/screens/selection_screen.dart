@@ -17,7 +17,7 @@ class SelectionScreen extends StatelessWidget {
     List completenessTracker = Provider.of<ProgressProvider>(context).completenessTracker;
     return Scaffold(
       appBar: PreferredSize(preferredSize: Size.fromHeight(kPreferredAppBarHeight),child: GeneralAppBar(text: 'Puzzle selection', textColor: colorSet.strongestColor, backgroundColor: colorSet.intermediaryColor,)),
-      backgroundColor: ThemeManager.of(context).colorSet.primaryColor,
+      backgroundColor: colorSet.primaryColor,
       bottomNavigationBar: PreferredSize(preferredSize: Size.fromHeight(kPreferredAppBarHeight), child: BottomSelectionBar(allPuzzles: completenessTracker.length, completedPuzzles: completenessTracker.where((isCompleted) => isCompleted == true).length, textColor: colorSet.strongestColor, backgroundColor: colorSet.intermediaryColor),),
       body: SafeArea(
         child: ListView.builder(scrollDirection: Axis.vertical, itemCount: picrossList.length, itemBuilder: (BuildContext context, int index) {

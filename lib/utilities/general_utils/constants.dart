@@ -10,6 +10,7 @@ const double kDescriptionTextFontSize = 26.0;
 const double kSelectionPopupTextFontSize = 30.0;
 const double kPreferredAppBarHeight = 40.0;
 const double kPlayButtonFontSize = 20.0;
+const double kSettingListTileTextFontSize = 24.0;
 
 const double kIconSizeModifier = 2.0;
 const int kInformationBarFontModifier = 15;

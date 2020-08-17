@@ -15,7 +15,8 @@ class SelectionPopup extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),),
       backgroundColor: colorSet.primaryColor,
       title: SelectionPopupText(gameNumber: gameNumber, color: colorSet.secondaryColor,),
-      children: [Padding(
+      children: [
+        Padding(
           padding: EdgeInsets.all(8.0),
           child: StartGameSelection(gameNumber: gameNumber, textColor: colorSet.intermediaryColor, backgroundColor: colorSet.secondaryColor,)
           ),]

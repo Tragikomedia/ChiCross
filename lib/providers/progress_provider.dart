@@ -26,6 +26,7 @@ class ProgressProvider extends ChangeNotifier {
   deleteDatabase(path);
   firstTimeInit = true;
   initializeDatabase();
+  notifyListeners();
 }
 //TODO Use the bool in initial screen to inform that something went wrong with saves
   Future<bool> initializeDatabase() async {
@@ -46,12 +47,12 @@ class ProgressProvider extends ChangeNotifier {
               'progress', ProgressModel(number: i, isCompleted: false).toMap(),
               conflictAlgorithm: ConflictAlgorithm.replace);
         }
+          maps = await database.query('progress');
       }
       for (Map map in maps) {
         completenessTracker[map['number']] = map['completed'] == 1;
-        print(map);
-        firstTimeInit = false;
       }
+      firstTimeInit = false;
     }
     notifyListeners();
     return true;

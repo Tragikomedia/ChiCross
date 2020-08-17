@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/screens/selection_screen.dart';
+import 'package:chinese_picross/screens/settings_screen.dart';
 
 class InitialScreen extends StatefulWidget {
   @override
@@ -51,7 +52,10 @@ class _InitialScreenState extends State<InitialScreen> {
                       },),
                       RaisedButton(child: Text('Erase DB', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
                         Provider.of<ProgressProvider>(context, listen: false).deleteDb();
-                      },)],
+                      },),
+                      RaisedButton(child: Text('Settings', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+                      },),],
                   ),
                 ),
               ),
