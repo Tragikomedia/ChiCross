@@ -14,7 +14,7 @@ class DescriptionTextTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: secondText != null ? Icon(Icons.label_important, color: textColor,) : SizedBox.shrink(),
-      title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      title: Wrap(alignment: WrapAlignment.spaceBetween,
       children: [
         DescriptionText(text: firstText, color: textColor, isChinese: isFirstTextChinese,),
         secondText != null ? DescriptionText(text: secondText, color: textColor, isChinese: isSecondTextChinese,) : SizedBox.shrink()

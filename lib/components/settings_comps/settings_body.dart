@@ -3,6 +3,7 @@ import 'package:chinese_picross/components/settings_comps/setting_list_tile.dart
 import 'package:chinese_picross/components/settings_comps/autosave_switch.dart';
 import 'package:chinese_picross/components/settings_comps/settings_button.dart';
 import 'package:chinese_picross/components/settings_comps/confirmation_popup.dart';
+import 'package:chinese_picross/localization/localization.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class SettingsBody extends StatelessWidget {
 
   SettingsBody({@required this.primaryColor, @required this.strongestColor});
 
+  // TODO Firebase!
   @override
   Widget build(BuildContext context) {
     return Consumer<PreferencesProvider>(
@@ -38,7 +40,7 @@ class SettingsBody extends StatelessWidget {
             ),
             SettingListTile(
               color: strongestColor,
-              text: 'Theme: ${prefs.themeData.name}',
+              text: 'Theme: ${localization[prefs.language][prefs.themeData.name]}',
               child: SettingsButton(
                 textColor: primaryColor,
                 backgroundColor: strongestColor,

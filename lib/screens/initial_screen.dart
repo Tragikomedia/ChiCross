@@ -1,10 +1,11 @@
-import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:chinese_picross/components/menu_comps/main_menu.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
-import 'package:chinese_picross/screens/selection_screen.dart';
-import 'package:chinese_picross/screens/settings_screen.dart';
+import 'package:chinese_picross/themes/theme_manager.dart';
+
+
 
 class InitialScreen extends StatefulWidget {
   @override
@@ -37,17 +38,7 @@ class _InitialScreenState extends State<InitialScreen> {
       future: _databaseLoaded,
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         if (snapshot.hasData) {
-          return Center(
-                child: Container(
-                  child: Column(
-                    children: [RaisedButton(child: Text('Play', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor,onPressed: () {
-     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},),
-                      RaisedButton(child: Text('Settings', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
-                      },),],
-                  ),
-                ),
-              );
+          return MainMenu();
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {

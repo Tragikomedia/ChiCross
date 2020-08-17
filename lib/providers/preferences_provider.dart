@@ -8,12 +8,14 @@ class PreferencesProvider extends ChangeNotifier {
   int _themeNumber = 0;
   int _lives = 5;
   bool _autosaveOn = true;
+  String _language = 'en';
 
   void loadPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     _themeNumber = (prefs.getInt('theme') ?? 0);
     _lives = (prefs.getInt('lives') ?? 5);
     _autosaveOn = (prefs.getBool('autosave') ?? false);
+    _language = (prefs.getString('language') ?? 'en');
     notifyListeners();
   }
 
@@ -58,6 +60,17 @@ class PreferencesProvider extends ChangeNotifier {
 
   bool get autosaveOn {
     return _autosaveOn;
+  }
+
+  void changeLanguage() async {
+    _language = _language == 'en' ? 'pl' : 'en';
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('language', _language);
+    notifyListeners();
+  }
+
+  String get language {
+    return _language;
   }
 
 }
