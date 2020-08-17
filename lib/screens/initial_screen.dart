@@ -30,43 +30,36 @@ class _InitialScreenState extends State<InitialScreen> {
   Widget build(BuildContext context) {
     // TODO put Scaffold etc above if
     var colorSet = ThemeManager.of(context).colorSet;
-    return FutureBuilder<bool>(
+    return Scaffold(
+      backgroundColor: colorSet.primaryColor,
+      body: SafeArea(
+        child: FutureBuilder<bool>(
       future: _databaseLoaded,
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         if (snapshot.hasData) {
-          return Scaffold(
-            backgroundColor: colorSet.primaryColor,
-            body: SafeArea(
-              child: Center(
+          return Center(
                 child: Container(
                   child: Column(
                     children: [RaisedButton(child: Text('Play', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor,onPressed: () {
-     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},), RaisedButton(child: Text('Color', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-       Provider.of<PreferencesProvider>(context, listen: false).changeThemeNumber();
-                    },),
-                      RaisedButton(child: Text('Autosave', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-                        Provider.of<PreferencesProvider>(context, listen: false).toggleAutosave();
-                      },),
-                      RaisedButton(child: Text('Lives: ${Provider.of<PreferencesProvider>(context).lives}', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-                        Provider.of<PreferencesProvider>(context, listen: false).changeNumberOfLives();
-                      },),
-                      RaisedButton(child: Text('Erase DB', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
-                        Provider.of<ProgressProvider>(context, listen: false).deleteDb();
-                      },),
+     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));},),
                       RaisedButton(child: Text('Settings', style: TextStyle(color: colorSet.primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),), color: colorSet.secondaryColor, onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
                       },),],
                   ),
                 ),
-              ),
-            ),
-          );
+              );
         } else if (snapshot.hasError) {
           return Text('ERROR');
         } else {
-          return Scaffold(body: Text('Lelum polelum'), backgroundColor: colorSet.secondaryColor,);
+          return Center(
+            child: CircularProgressIndicator(
+              backgroundColor: colorSet.strongestColor,
+            ),
+          );
         }
       },
+    ),
+    ),
     );
   }
 }
