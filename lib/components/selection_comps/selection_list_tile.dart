@@ -3,6 +3,9 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/components/selection_comps/leading_character.dart';
 import 'package:chinese_picross/components/selection_comps/selection_tile_text.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/localization/localization.dart';
+import 'package:provider/provider.dart';
 
 class SelectionListTile extends StatelessWidget {
   final int gameNumber;
@@ -28,8 +31,12 @@ class SelectionListTile extends StatelessWidget {
           backgroundColor: colorSet.primaryColor,),
         title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          SelectionTileText(text: (gameNumber + 1).toString(), color: colorSet.primaryColor,),
-          SelectionTileText(text: meaning, color: colorSet.primaryColor,)
+          SelectionTileText(
+            text: (gameNumber + 1).toString(),
+            color: colorSet.primaryColor,),
+          SelectionTileText(
+            text: meaning != '???' ? localization[Provider.of<PreferencesProvider>(context, listen: false).language]['picross'][gameNumber][meaning] : '???' ,
+            color: colorSet.primaryColor,)
         ],),
       ),);
   }

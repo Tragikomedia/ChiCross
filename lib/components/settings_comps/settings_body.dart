@@ -17,6 +17,9 @@ class SettingsBody extends StatelessWidget {
   // TODO Firebase!
   @override
   Widget build(BuildContext context) {
+    var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['settings'];
+    var generalText = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general'];
+    var themes = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['theme'];
     return Consumer<PreferencesProvider>(
       builder: (context, prefs, child) {
         return ListView(
@@ -24,14 +27,15 @@ class SettingsBody extends StatelessWidget {
           children: [
             SettingListTile(
               color: strongestColor,
-              text: 'Autosave: ${prefs.autosaveOn ? 'On' : 'Off'}',
+              text: '${text['autosave']}: ${prefs.autosaveOn ? text['on'] : text['off']}',
               child: AutosaveSwitch(
                 colorSet: ThemeManager.of(context).colorSet,
               ),),
             SettingListTile(
               color: strongestColor,
-              text: 'Lives: ${prefs.lives != -1 ? prefs.lives : 'Unlimited'}',
+              text: '${generalText['lives']}: ${prefs.lives != -1 ? prefs.lives : generalText['unlimited']}',
               child: SettingsButton(
+                text: text['change'],
                 textColor: primaryColor,
                 backgroundColor: strongestColor,
                 onPressed: () {
@@ -40,8 +44,9 @@ class SettingsBody extends StatelessWidget {
             ),
             SettingListTile(
               color: strongestColor,
-              text: 'Theme: ${localization[prefs.language][prefs.themeData.name]}',
+              text: '${text['theme']}: ${themes[prefs.themeData.name]}',
               child: SettingsButton(
+                text: text['change'],
                 textColor: primaryColor,
                 backgroundColor: strongestColor,
                 onPressed: () {
@@ -51,7 +56,19 @@ class SettingsBody extends StatelessWidget {
             ),
             SettingListTile(
               color: strongestColor,
-              text: 'Synchronise progress',
+              text: '${text['language']}: ${text['currentlang']}',
+              child: SettingsButton(
+                text: text['change'],
+                textColor: primaryColor,
+                backgroundColor: strongestColor,
+                onPressed: () {
+                  prefs.changeLanguage();
+                },
+              ),
+            ),
+            SettingListTile(
+              color: strongestColor,
+              text: text['syncprog'],
               child: SettingsButton(
                 text: 'TODO',
                 textColor: primaryColor,
@@ -63,9 +80,9 @@ class SettingsBody extends StatelessWidget {
             ),
             SettingListTile(
               color: strongestColor,
-              text: 'Erase progress',
+              text: text['eraseprog'],
               child: SettingsButton(
-                  text: 'Erase',
+                  text: text['erase'],
                   textColor: primaryColor,
                   backgroundColor: strongestColor,
                   onPressed: () {

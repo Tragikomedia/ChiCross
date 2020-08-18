@@ -11,11 +11,11 @@ List<Picross> picrossList = [
         gameNumber: 0,
       ),
       description: Description(
-          character: 'A', chinesePronunciation: 'ba', meaning: 'Nothing'),
+          character: 'A', chinesePronunciation: 'ba', meaning: 'Test'),
       examples: [
+        Example(word: '出租车司机', meaning: 'Lol'),
         Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'Rerekumkum'),
       ]),
   Picross(
       number: 1,
@@ -28,9 +28,9 @@ List<Picross> picrossList = [
           chinesePronunciation: 'ba',
           meaning: 'Hajle Selassie'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'La'),
+        Example(word: '出租车司机', meaning: 'Ma'),
+        Example(word: '出租车司机', meaning: 'Wa'),
         Example(word: '司机', meaning: 'Driver')
       ]),
   Picross(
@@ -95,9 +95,9 @@ List<Picross> picrossList = [
       description: Description(
           character: '工', chinesePronunciation: 'gōng', meaning: 'Work'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'Too'),
+        Example(word: '出租车司机', meaning: 'Lazy'),
+        Example(word: '出租车司机', meaning: 'To think'),
       ]),
   Picross(
       number: 3,
@@ -154,9 +154,9 @@ List<Picross> picrossList = [
       description: Description(
           character: '新', chinesePronunciation: 'xīn', meaning: 'New'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'News'),
+        Example(word: '出租车司机', meaning: 'Newspaper'),
+        Example(word: '出租车司机', meaning: 'Newsr'),
       ]),
   Picross(
       number: 4,
@@ -167,9 +167,9 @@ List<Picross> picrossList = [
       description: Description(
           character: 'A', chinesePronunciation: 'ba', meaning: 'Nothing'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'Nie'),
+        Example(word: '出租车司机', meaning: 'Nein'),
+        Example(word: '出租车司机', meaning: 'No'),
       ]),
   Picross(
       number: 5,
@@ -222,9 +222,9 @@ List<Picross> picrossList = [
       description: Description(
           character: '得', chinesePronunciation: 'dé', meaning: 'Obtain'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
-        Example(word: '出租车司机', meaning: 'Taxi driver'),
+        Example(word: '出租车司机', meaning: 'Ob'),
+        Example(word: '出租车司机', meaning: 'Ta'),
+        Example(word: '出租车司机', meaning: 'In'),
       ]),
   Picross(
       number: 6,

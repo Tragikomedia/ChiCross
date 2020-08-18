@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/components/game_comps/top_bar/top_text.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/localization/localization.dart';
+import 'package:provider/provider.dart';
 
 class GameAppBar extends StatelessWidget {
   final Color textColor;
@@ -14,7 +17,7 @@ class GameAppBar extends StatelessWidget {
     return AppBar(backgroundColor: backgroundColor,
           iconTheme: IconThemeData(color: textColor),
           title: Align(alignment: Alignment.centerRight,
-            child: TopText(text: '${gameNumber + 1}. ${picrossList[gameNumber].description.meaning}',
+            child: TopText(text: '${gameNumber + 1}. ${localization[Provider.of<PreferencesProvider>(context, listen: false).language]['picross'][gameNumber][picrossList[gameNumber].description.meaning]}',
               color: textColor,),
           ),);
   }

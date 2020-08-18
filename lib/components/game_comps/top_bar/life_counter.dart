@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/components/game_comps/top_bar/life_icon.dart';
 import 'package:chinese_picross/components/game_comps/top_bar/top_text.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class LifeCounter extends StatelessWidget {
@@ -22,7 +26,7 @@ class LifeCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(valueListenable: Provider.of<GridProvider>(context, listen: false).livesLeft, builder: (context, livesLeft, child) {
       Widget child;
-      livesLeft >= 0 ? child = Row(children: getLifeIcons(context, livesLeft),) : child = TopText(text: 'Unlimited', color: iconBackgroundColor,);
+      livesLeft >= 0 ? child = Row(children: getLifeIcons(context, livesLeft),) : child = TopText(text: localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general']['unlimited'], color: iconBackgroundColor,);
       return child;
     },);
   }

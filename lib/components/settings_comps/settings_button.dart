@@ -9,7 +9,7 @@ class SettingsButton extends StatelessWidget {
   final String text;
   final Function onPressed;
 
-  SettingsButton({@required this.textColor, @required this.backgroundColor, @required this.onPressed, this.text='Change'});
+  SettingsButton({@required this.textColor, @required this.backgroundColor, @required this.onPressed, @required this.text});
 
   @override
   Widget build(BuildContext context) {

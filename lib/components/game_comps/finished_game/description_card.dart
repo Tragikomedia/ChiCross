@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/components/game_comps/finished_game/description_text_tile.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
+import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/localization/localization.dart';
+import 'package:provider/provider.dart';
 
 class DescriptionCard extends StatelessWidget {
   final int gameNumber;
@@ -14,15 +17,17 @@ class DescriptionCard extends StatelessWidget {
   description = picrossList[gameNumber].description,
   examples = picrossList[gameNumber].examples;
 
-  List<DescriptionTextTile> _getTextTiles() {
+  List<DescriptionTextTile> _getTextTiles(BuildContext context) {
+    var loc = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['game'];
+    var picrLoc = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['picross'][gameNumber];
     List<DescriptionTextTile> textTiles = [
-      DescriptionTextTile(firstText: 'Character: ', textColor: textColor, secondText: description.character, isSecondTextChinese: true,),
-      DescriptionTextTile(firstText: 'Pronunciation: ', secondText: description.chinesePronunciation, textColor: textColor,),
-      DescriptionTextTile(firstText: 'Meaning: ', secondText: description.meaning, textColor: textColor,),
-      DescriptionTextTile(firstText: 'Examples:', textColor: textColor,),
+      DescriptionTextTile(firstText: '${loc['character']}: ', textColor: textColor, secondText: description.character, isSecondTextChinese: true,),
+      DescriptionTextTile(firstText: '${loc['pronunciation']}: ', secondText: description.chinesePronunciation, textColor: textColor,),
+      DescriptionTextTile(firstText: '${loc['meaning']}: ', secondText: picrLoc[description.meaning], textColor: textColor,),
+      DescriptionTextTile(firstText: '${loc['examples']}:', textColor: textColor,),
     ];
     for (var example in examples) {
-      textTiles.add(DescriptionTextTile(firstText: example.word, isFirstTextChinese: true, secondText: example.meaning, textColor: textColor,));
+      textTiles.add(DescriptionTextTile(firstText: example.word, isFirstTextChinese: true, secondText: picrLoc[example.meaning], textColor: textColor,));
     }
     return textTiles;
   }
@@ -36,7 +41,7 @@ class DescriptionCard extends StatelessWidget {
           color: backgroundColor,
           child: ListView(
             scrollDirection: Axis.vertical,
-            children: _getTextTiles(),),
+            children: _getTextTiles(context),),
         ),
       ),);
   }

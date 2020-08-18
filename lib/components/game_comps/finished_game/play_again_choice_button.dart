@@ -5,6 +5,7 @@ import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/screens/game_screen.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/utilities/general_utils/constants.dart';
+import 'package:chinese_picross/localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class PlayAgainChoiceButton extends StatelessWidget {
@@ -16,6 +17,7 @@ class PlayAgainChoiceButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general'];
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       child: RaisedButton(
@@ -39,7 +41,7 @@ class PlayAgainChoiceButton extends StatelessWidget {
         },
         color: ThemeManager.of(context).colorSet.secondaryColor,
         child: Text(
-          gameNumber != null ? 'Yes' : 'No',
+          gameNumber != null ? text['yes'] : text['no'],
           style: TextStyle(
               color: ThemeManager.of(context).colorSet.intermediaryColor,
           fontSize: kPlayAgainButtonFontSize,

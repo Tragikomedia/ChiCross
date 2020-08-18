@@ -4,6 +4,7 @@ import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/utilities/general_utils/constants.dart';
+import 'package:chinese_picross/localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class PlayButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class PlayButton extends StatelessWidget {
     return RaisedButton(
       color: backgroundColor,
       child: Text(
-          (saveData == null) ? 'START' : 'LOAD SAVE',
+          (saveData == null) ? 'START' : localization[Provider.of<PreferencesProvider>(context, listen: false).language]['selection']['load'],
           style: TextStyle(
             color: textColor,
             fontFamily: 'Cyrulik',
