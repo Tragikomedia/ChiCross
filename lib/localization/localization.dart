@@ -38,12 +38,16 @@ const Map localization = {
       'defeattitle' : 'DEFEAT',
       'defeatmessage' : 'Would you like to try again?',
     },
+    'collection' : {
+      'notilemessage' : 'Once you finish a level, the cards you collected will appear here!'
+    },
     'general' : {
       'lives' : 'Lives',
       'unlimited' : 'Unlimited',
       'yes' : 'Yes',
       'no' : 'No',
       'settings' : 'Settings',
+      'collection' : 'Collection',
     },
     'picross' : {
       0 : {
@@ -136,12 +140,16 @@ const Map localization = {
       'defeattitle' : 'KLĘSKA',
       'defeatmessage' : 'Czy chcesz spróbować ponownie?',
     },
+    'collection' : {
+      'notilemessage' : 'Zdobyte karty pojawią się w tym miejscu, gdy rozwiążesz zagadkę!'
+    },
     'general' : {
       'lives' : 'Życia',
       'unlimited' : 'Nieskończone',
       'yes' : 'Tak',
       'no' : 'Nie',
       'settings' : 'Ustawienia',
+      'collection' : 'Kolekcja',
     },
     'picross' : {
       0 : {

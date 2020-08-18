@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/components/game_comps/finished_game/description_text_tile.dart';
+import 'package:chinese_picross/components/shared_comps/description_card/description_text_tile.dart';
 import 'package:chinese_picross/picross_files/picross_list.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/localization/localization.dart';

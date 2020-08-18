@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:chinese_picross/utilities/general_utils/constants.dart';
-import 'package:chinese_picross/components/shared_comps/general_app_bar.dart';
+import 'package:chinese_picross/components/shared_comps/app_bar/general_app_bar.dart';
 import 'package:chinese_picross/components/settings_comps/settings_body.dart';
 import 'package:chinese_picross/localization/localization.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
@@ -16,7 +16,8 @@ class SettingsScreen extends StatelessWidget {
     Color strongestColor = ThemeManager.of(context).colorSet.strongestColor;
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kPreferredAppBarHeight),
+          preferredSize: Size.fromHeight(
+              kPreferredAppBarHeight),
           child: GeneralAppBar(
             text: localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general']['settings'],
             textColor: strongestColor, 

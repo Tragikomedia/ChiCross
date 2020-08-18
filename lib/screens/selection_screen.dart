@@ -6,7 +6,7 @@ import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/localization/localization.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
-import 'package:chinese_picross/components/shared_comps/general_app_bar.dart';
+import 'package:chinese_picross/components/shared_comps/app_bar/general_app_bar.dart';
 import 'package:chinese_picross/components/selection_comps/bottom_selection_bar.dart';
 import 'package:provider/provider.dart';
 

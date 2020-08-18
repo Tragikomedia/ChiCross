@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/components/game_comps/finished_game/description_text.dart';
+import 'package:chinese_picross/components/shared_comps/description_card/description_text.dart';
 
 class DescriptionTextTile extends StatelessWidget {
   final String firstText;

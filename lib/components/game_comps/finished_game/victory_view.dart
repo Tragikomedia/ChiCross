@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chinese_picross/components/shared_comps/character_tile.dart';
+import 'package:chinese_picross/components/shared_comps/character_tile/character_tile.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
-import 'package:chinese_picross/components/game_comps/finished_game/description_card.dart';
+import 'package:chinese_picross/components/shared_comps/description_card/description_card.dart';
 
 class VictoryView extends StatelessWidget {
   final int gameNumber;
@@ -21,9 +21,16 @@ class VictoryView extends StatelessWidget {
                   color: colorSet.strongestColor,
                   borderRadius: BorderRadius.circular(10.0)),
                 padding: EdgeInsets.all(5.0),
-                child: CharacterTile(characterNumber: gameNumber, fontSizeModifier: 4.0, showDescription: false,)),
+                child: CharacterTile(
+                  characterNumber: gameNumber,
+                  fontSizeModifier: 4.0,)),
           )),
-        Flexible(child: DescriptionCard(gameNumber: gameNumber, textColor: colorSet.strongestColor, borderColor: colorSet.secondaryColor, backgroundColor: colorSet.intermediaryColor,))
+        Flexible(
+            child: DescriptionCard(
+              gameNumber: gameNumber,
+              textColor: colorSet.strongestColor,
+              borderColor: colorSet.secondaryColor,
+              backgroundColor: colorSet.intermediaryColor,))
     ],);
   }
 }

@@ -11,11 +11,14 @@ class BigFancyCharacter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(character,
-      style: TextStyle(
-        fontSize: kBigFancyCharacterFontSize * fontSizeModifier,
-        fontFamily: 'MaShanZheng',
-        color: color
-      ),);
+    return FittedBox(
+      fit: BoxFit.fill,
+      child: Text(character,
+        style: TextStyle(
+          fontSize: kBigFancyCharacterFontSize * fontSizeModifier,
+          fontFamily: 'MaShanZheng',
+          color: color
+        ),),
+    );
   }
 }
