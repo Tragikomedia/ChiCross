@@ -15,10 +15,11 @@ class NoTilesMessage extends StatelessWidget {
           Icon(
             Icons.search,
             color: color,
-            size: kNoTileInCollectionMessageFontSize * 1.5,
+            size: kNoTileInCollectionMessageFontSize * 9,
           ),
           Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: color,
               fontFamily: 'Cyrulik',

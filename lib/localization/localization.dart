@@ -48,6 +48,7 @@ const Map localization = {
       'no' : 'No',
       'settings' : 'Settings',
       'collection' : 'Collection',
+      'tutorial' : 'Tutorial'
     },
     'picross' : {
       0 : {
@@ -150,6 +151,7 @@ const Map localization = {
       'no' : 'Nie',
       'settings' : 'Ustawienia',
       'collection' : 'Kolekcja',
+      'tutorial' : 'Tutorial',
     },
     'picross' : {
       0 : {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/screens/selection_screen.dart';
 import 'package:chinese_picross/screens/settings_screen.dart';
 import 'package:chinese_picross/screens/collection_screen.dart';
+import 'package:chinese_picross/screens/tutorial_screen.dart';
 import 'package:chinese_picross/components/menu_comps/menu_button.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
@@ -37,6 +38,14 @@ class MainMenu extends StatelessWidget {
               backgroundColor: colorSet.secondaryColor,
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));
+              },
+            ),
+            MenuButton(
+              text: generalText['tutorial'],
+              textColor: colorSet.primaryColor,
+              backgroundColor: colorSet.secondaryColor,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TutorialScreen()));
               },
             ),
             MenuButton(
