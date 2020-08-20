@@ -53,10 +53,10 @@ const Map localization = {
     },
     'picross': {
       0: {
-        'Test': 'Test',
-        'Lol': 'Lol',
-        'Taxi driver': 'Taxi driver',
-        'Rerekumkum': 'Rerekumkum',
+        'Luck': 'Luck',
+        'Well-being': 'Well-being',
+        'Wish well': 'Wish well',
+        'Material benefit': 'Material benefit',
       },
       1: {
         'Hajle Selassie': 'Hajle Selassie',
@@ -65,16 +65,16 @@ const Map localization = {
         'Wa': 'Wa',
       },
       2: {
-        'Work': 'Work',
-        'Too': 'Too',
-        'Lazy': 'Lazy',
-        'To think': 'To think',
+        'Kind' : 'Kind',
+        'Type' : 'Type',
+        'Similar' : 'Similar',
+        'Category' : 'Category',
       },
       3: {
         'New': 'New',
         'News': 'News',
-        'Newspaper': 'Newspaper',
-        'Newsr': 'Newsr',
+        'Fresh': 'Fresh',
+        'Innovation': 'Innovation',
       },
       4: {
         'Nothing': 'Nothing',
@@ -84,9 +84,9 @@ const Map localization = {
       },
       5: {
         'Obtain': 'Obtain',
-        'Ob': 'Ob',
-        'Ta': 'Ta',
-        'In': 'In',
+        'Receive': 'Receive',
+        'Get': 'Get',
+        'Violate law': 'Violate law',
       },
       6: {
         'Pleasure': 'Pleasure',
@@ -190,10 +190,10 @@ const Map localization = {
     },
     'picross' : {
       0 : {
-        'Test' : 'Test',
-        'Lol' : 'Lol',
-        'Taxi driver' : 'Taxi driver',
-        'Rerekumkum' : 'Rerekumkum',
+        'Luck': 'Szczęście',
+        'Well-being': 'Pomyślność',
+        'Wish well': 'Dobrze życzyć',
+        'Material benefit': 'Korzyść materialna',
       },
       1 : {
         'Hajle Selassie' : 'Kazimierz Wielki',
@@ -202,16 +202,16 @@ const Map localization = {
         'Wa' : 'Maroko',
       },
       2 : {
-        'Work' : 'Work',
-        'Too' : 'Too',
-        'Lazy' : 'Lazy',
-        'To think' : 'To think',
+        'Kind' : 'Rodzaj',
+        'Type' : 'Typ',
+        'Similar' : 'Podobny',
+        'Category' : 'Kategoria',
       },
       3 : {
         'New' : 'Nowy',
         'News' : 'Wiadomości',
-        'Newspaper' : 'Gazeta',
-        'Newsr' : 'Wiadomościr',
+        'Fresh' : 'Świeży',
+        'Innovation' : 'Innowacja',
       },
       4 : {
         'Nothing' : 'Nic',
@@ -221,9 +221,9 @@ const Map localization = {
       },
       5 : {
         'Obtain' : 'Zdobyć',
-        'Ob' : 'Ob',
-        'Ta' : 'Ta',
-        'In' : 'In',
+        'Receive' : 'Otrzymać',
+        'Get' : 'Uzyskać',
+        'Violate law' : 'Łamać prawo',
       },
       6 : {
         'Pleasure' : 'Przyjemność',

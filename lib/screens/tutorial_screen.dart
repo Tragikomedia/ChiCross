@@ -38,7 +38,6 @@ class _TutorialScreenState extends State<TutorialScreen> {
       )..show(context);
     });
   }
-  
 
   @override
   void dispose() {
