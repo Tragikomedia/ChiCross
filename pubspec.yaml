@@ -34,7 +34,7 @@ flutter:
   fonts:
     - family: Cyrulik
       fonts:
-        - asset: fonts/Cyrulik-Rounded.ttf
+        - asset: fonts/Cyrulik-Sharp.ttf
     - family: MaShanZheng
       fonts:
         - asset: fonts/MaShanZheng-Regular.ttf
