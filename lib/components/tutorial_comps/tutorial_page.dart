@@ -24,7 +24,7 @@ class TutorialPage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: colorSet.primaryColor,
-          borderRadius: BorderRadius.circular(20.0)
+          borderRadius: BorderRadius.circular(20.0),
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,

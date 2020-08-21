@@ -240,7 +240,7 @@ const Map localization = {
     },
     'tutorial': {
       0: {
-        'title': 'Cel Gry',
+        'title': 'Cel gry',
         'text': 'Celem gry typu Picross (znanej także jako Nonogram albo obrazek logiczny) jest nakreślenie obrazka poprzez zaznaczanie odpowiednich pól. Gra kończy się w chwili, gdy wszystkie poprawne pola zostały odnalezione. By zaznaczyć pole, wystarczy je nacisnąć.'
       },
       1: {
@@ -248,7 +248,7 @@ const Map localization = {
         'text': 'To, które pola należy zaznaczyć, wynika z podpowiedzi zlokalizowanych na górze i po lewej stronie planszy. Liczby oznaczają następującą po sobie liczbę prawidłowych pól w danej linii pionowej lub poziomej. Przykładowo, podpowiedź "2 2" oznacza, iż w danej linii tuż koło siebie znajdują się dwa prawidłowe pola, po nich występuje przynajmniej jedno puste pole, a następnie mamy kolejną parę prawidłowych pól. Sekwencja ta może być otoczona (z przodu i z tyłu) przez nieokreśloną liczbę pustych pól.'
       },
       2: {
-        'title': 'Dedukcja jest Kluczem',
+        'title': 'Kluczem dedukcja',
         'text': 'By ukończyć poziom, konieczne jest wyciąganie wniosków z posiadanej wiedzy i skupienie na tym, co pewne, krok po kroku uzupełniając luki. Na przykład, które z dziesięciu pól tego rzędu możemy z pewnością zaznaczyć jako prawidłowe przy założeniu, że łącznie powinniśmy zaznaczyć ich dziewięć?'
       },
       3: {
@@ -256,11 +256,11 @@ const Map localization = {
         'text': 'Niezależnie od miejsca startu tej sekwencji, wskazanych osiem pól powinno być zaznaczonych, ponieważ nie ma takiego rozwiązania, w którym pozostałyby puste. Jedyna niewiadoma związana jest tutaj z tym, które z pozostałych pól należy zaznaczyć, a które pozostawić puste. Do rozwiązania problemu potrzeba jednak szerszej perspektywy.'
       },
       4: {
-        'title': "Społeczność Pól",
+        'title': "Związki pól",
         'text': 'Relacje między polami są dość złożone i często zaznaczanie pola w jednym rzędzie znacząco rozjaśni sytuację w innych częściach planszy. Skupmy się na umieszczonym na górze wycinku. Czego możemy być pewni?',
       },
       5: {
-        'title': 'Krzyżyki to Przyjaciele',
+        'title': 'Krzyżyki to przyjaciele',
         'text': 'Nawet próbując rozciągnąć sekwencję długą na pięc pól, niemożliwym jest, aby sięgnęła ona do lewej części rzędu zgodnie z posiadanymi informacjami. Dobrym pomysłem jest więc przekreślenie tych dwóch pól. Tym sposobem nie tylko ułatwiamy sobie proces dedukcji, mogąc swobodnie zignorować te pola, ale też pozwalamy grze uchronić nas przed przypadkowym ich kliknięciem. W takim przypadku zostałyby przekreślone automatycznie, ale za cenę punktów życia (których utrata, poza trybem nieskończonych żyć, oznacza przegraną). Naciśnij pole dwukrotnie lub przytrzymaj je przez chwilę, aby je przekreślić. Zrób to jeszcze raz, by przywrócić je do oryginalnego stanu.'
       },
       6: {
@@ -268,7 +268,7 @@ const Map localization = {
         'text': 'Informacje wynikające z rzędów wzbogacają wiedzę o kolumnach i odwrotnie! Gdy masz pewność co do czegoś, staje się to podstawą całego procesu eliminacji i pomaga rozwiązać nawet najbardziej zawiłe części zagadki.'
       },
       7: {
-        'title': 'O Wygrywaniu',
+        'title': 'O wygrywaniu',
         'text': 'Gdy ukończysz poziom, otrzymasz kartę z danym znakiem, którą możesz później znaleźć w swojej kolekcji. Twoje ogólne postępy zapisywane są w pamięci urządzenia, możesz jednak skorzystać też z funkcji przechowywania online (więcej informacji w sekcji "Synchronizuj postęp" w ustawieniach). Możesz także zapisywać swoje postępy w obrębie danego poziomu poprzez skorzystanie z funkcji autozapisu (domyślnie włączona) lub ręcznie poprzez wciśnięcie przycisku "ZAPISZ" po prawej stronie paska życia.'
       },
     },

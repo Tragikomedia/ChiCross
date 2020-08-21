@@ -10,16 +10,24 @@ class MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      child: Text(
-        text,
-        style: TextStyle(
-            color: textColor,
-            fontWeight: FontWeight.bold, fontSize: 30.0),),
-      color: backgroundColor,
-      onPressed: () {
-        onPressed();
-        },
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.all(12.0),
+        child: RaisedButton(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: textColor,
+                fontFamily: 'Cyrulik',
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.5,
+                fontSize: 30.0),),
+          color: backgroundColor,
+          onPressed: () {
+            onPressed();
+            },
+        ),
+      ),
     );
   }
 }

@@ -14,6 +14,8 @@ const double kSettingListTileTextFontSize = 24.0;
 const double kNoTileInCollectionMessageFontSize = 30.0;
 const double kTutorialTitleFontSize = 30.0;
 const double kTutorialContentFontSize = 23.0;
+const double kMenuLogoSmallFontSize = 50.0;
+const double kMenuLogoLargeFontSize = 70.0;
 
 const double kIconSizeModifier = 2.0;
 const int kInformationBarFontModifier = 15;

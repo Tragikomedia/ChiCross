@@ -28,45 +28,42 @@ class MainMenu extends StatelessWidget {
     var colorSet = ThemeManager.of(context).colorSet;
     var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['menu'];
     var generalText = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general'];
-    return Center(
-      child: Container(
-        child: Column(
-          children: [
-            MenuButton(
-              text: text['play'],
-              textColor: colorSet.primaryColor,
-              backgroundColor: colorSet.secondaryColor,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));
-              },
-            ),
-            MenuButton(
-              text: generalText['tutorial'],
-              textColor: colorSet.primaryColor,
-              backgroundColor: colorSet.secondaryColor,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TutorialScreen()));
-              },
-            ),
-            MenuButton(
-              text: generalText['collection'],
-              textColor: colorSet.primaryColor,
-              backgroundColor: colorSet.secondaryColor,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => CollectionScreen(completedPuzzles: _getCollectionList(context),)));
-              },
-            ),
-            MenuButton(
-              text: generalText['settings'],
-              textColor: colorSet.primaryColor,
-              backgroundColor: colorSet.secondaryColor,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
-              },
-            ),
-            ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        MenuButton(
+          text: text['play'],
+          textColor: colorSet.primaryColor,
+          backgroundColor: colorSet.secondaryColor,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));
+          },
         ),
-      ),
+        MenuButton(
+          text: generalText['tutorial'],
+          textColor: colorSet.primaryColor,
+          backgroundColor: colorSet.secondaryColor,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => TutorialScreen()));
+          },
+        ),
+        MenuButton(
+          text: generalText['collection'],
+          textColor: colorSet.primaryColor,
+          backgroundColor: colorSet.secondaryColor,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CollectionScreen(completedPuzzles: _getCollectionList(context),)));
+          },
+        ),
+        MenuButton(
+          text: generalText['settings'],
+          textColor: colorSet.primaryColor,
+          backgroundColor: colorSet.secondaryColor,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+          },
+        ),
+        ],
     );
   }
 }
