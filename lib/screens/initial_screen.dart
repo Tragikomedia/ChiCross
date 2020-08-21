@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
@@ -26,7 +25,6 @@ class _InitialScreenState extends State<InitialScreen> {
     super.initState();
     // It's the only not terrible way to link future builder to provider
     WidgetsBinding.instance.addPostFrameCallback((_) => initDbAndPref(context));
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
   
   @override
