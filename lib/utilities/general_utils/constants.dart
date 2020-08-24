@@ -8,6 +8,7 @@ const double kSelectionTileTextFontSize = 23.0;
 const double kGeneralAppBarFontSize = 28.0;
 const double kDescriptionTextFontSize = 26.0;
 const double kSelectionPopupTextFontSize = 30.0;
+const double kMenuPopupTextFontSize = 25.0;
 const double kPreferredAppBarHeight = 40.0;
 const double kPlayButtonFontSize = 20.0;
 const double kSettingListTileTextFontSize = 24.0;

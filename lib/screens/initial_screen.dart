@@ -4,8 +4,8 @@ import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/components/menu_comps/menu_view.dart';
-
-
+import 'package:chinese_picross/components/menu_comps/error_text.dart';
+import 'package:flushbar/flushbar.dart';
 
 class InitialScreen extends StatefulWidget {
   @override
@@ -39,7 +39,11 @@ class _InitialScreenState extends State<InitialScreen> {
         if (snapshot.hasData) {
           return MenuView();
         } else if (snapshot.hasError) {
-          return Text('ERROR');
+          return Center(
+            child: ErrorText(
+              color: colorSet.strongestColor,
+            ),
+          );
         } else {
           return Center(
             child: CircularProgressIndicator(

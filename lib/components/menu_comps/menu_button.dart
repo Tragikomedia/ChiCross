@@ -14,6 +14,9 @@ class MenuButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(12.0),
         child: RaisedButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0)
+          ),
           child: Text(
             text,
             style: TextStyle(

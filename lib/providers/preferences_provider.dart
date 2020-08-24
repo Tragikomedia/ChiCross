@@ -9,6 +9,7 @@ class PreferencesProvider extends ChangeNotifier {
   int _lives = 5;
   bool _autosaveOn = true;
   String _language = 'en';
+  bool _choseLanguage = false;
 
   void loadPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -16,6 +17,7 @@ class PreferencesProvider extends ChangeNotifier {
     _lives = (prefs.getInt('lives') ?? 5);
     _autosaveOn = (prefs.getBool('autosave') ?? false);
     _language = (prefs.getString('language') ?? 'en');
+    _choseLanguage = (prefs.getBool('choseLanguage') ?? false);
     notifyListeners();
   }
 
@@ -49,6 +51,23 @@ class PreferencesProvider extends ChangeNotifier {
 
   int get lives {
     return _lives;
+  }
+
+  bool get choseLanguage {
+    return _choseLanguage;
+  }
+
+  void chooseLanguageOnStart(String lang) {
+    _language = lang;
+    _choseLanguage = true;
+    _saveChosenLanguage();
+  }
+
+  void _saveChosenLanguage() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('language', _language);
+    await prefs.setBool('choseLanguage', _choseLanguage);
+    notifyListeners();
   }
 
   void toggleAutosave() async {

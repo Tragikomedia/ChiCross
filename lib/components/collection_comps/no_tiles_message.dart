@@ -15,7 +15,9 @@ class NoTilesMessage extends StatelessWidget {
           Icon(
             Icons.search,
             color: color,
-            size: kNoTileInCollectionMessageFontSize * 9,
+            size: MediaQuery.of(context).orientation == Orientation.portrait
+                ? kNoTileInCollectionMessageFontSize * 9
+                : kNoTileInCollectionMessageFontSize * 4,
           ),
           Text(
             text,

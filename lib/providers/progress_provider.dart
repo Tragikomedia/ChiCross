@@ -28,7 +28,6 @@ class ProgressProvider extends ChangeNotifier {
   initializeDatabase();
   notifyListeners();
 }
-//TODO Use the bool in initial screen to inform that something went wrong with saves
   Future<bool> initializeDatabase() async {
     // FirstTimeInit prevents method realization when notifyListeners is used
     if (firstTimeInit) {

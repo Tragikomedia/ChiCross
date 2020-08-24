@@ -49,7 +49,9 @@ const Map localization = {
       'settings': 'Settings',
       'collection': 'Collection',
       'tutorial': 'Tutorial',
-      'tutorialmessage' : 'Swipe left and right to learn more about the game!'
+      'tutorialmessage' : 'Swipe left and right to learn more about the game!',
+      'nese' : 'nese',
+      'error' : 'Something went wrong loading the database!',
     },
     'picross': {
       0: {
@@ -186,7 +188,9 @@ const Map localization = {
       'settings' : 'Ustawienia',
       'collection' : 'Kolekcja',
       'tutorial' : 'Tutorial',
-      'tutorialmessage' : 'Przesuwaj ekran w lewo i prawo, by dowiedzieć się więcej!'
+      'tutorialmessage' : 'Przesuwaj ekran w lewo i prawo, by dowiedzieć się więcej!',
+      'nese' : 'ński',
+      'error' : 'Błąd podczas ładowania bazy danych!'
     },
     'picross' : {
       0 : {
