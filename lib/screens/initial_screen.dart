@@ -5,7 +5,7 @@ import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/components/menu_comps/menu_view.dart';
 import 'package:chinese_picross/components/menu_comps/error_text.dart';
-import 'package:flushbar/flushbar.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class InitialScreen extends StatefulWidget {
   @override
@@ -25,6 +25,7 @@ class _InitialScreenState extends State<InitialScreen> {
     super.initState();
     // It's the only not terrible way to link future builder to provider
     WidgetsBinding.instance.addPostFrameCallback((_) => initDbAndPref(context));
+    Firebase.initializeApp();
   }
   
   @override

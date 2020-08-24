@@ -41,6 +41,14 @@ const Map localization = {
     'collection': {
       'notilemessage': 'Once you finish a level, the cards you collected will appear here!'
     },
+    'firebase' : {
+      'synchro' : 'Synchronisation',
+      'loggedas' : 'Logged user',
+      'nousers' : 'Currently no logged users',
+      'error' : 'Something went wrong, authorisation failed!',
+      'signin' : 'Sign in with Google',
+      'signout' : 'Sign out of Google',
+    },
     'general': {
       'lives': 'Lives',
       'unlimited': 'Unlimited',
@@ -51,7 +59,7 @@ const Map localization = {
       'tutorial': 'Tutorial',
       'tutorialmessage' : 'Swipe left and right to learn more about the game!',
       'nese' : 'nese',
-      'error' : 'Something went wrong loading the database!',
+      'error' : 'Something went wrong while loading the database!',
     },
     'picross': {
       0: {
@@ -179,6 +187,14 @@ const Map localization = {
     },
     'collection' : {
       'notilemessage' : 'Zdobyte karty pojawią się w tym miejscu, gdy rozwiążesz zagadkę!'
+    },
+    'firebase' : {
+      'synchro' : 'Synchronizacja',
+      'loggedas' : 'Zalogowany użytkownik',
+      'nousers' : 'Aktualnie brak zalogowanych użytkowników',
+      'error' : 'Coś poszło nie tak, autoryzacja konta nie powiodła się!',
+      'signin' : 'Zaloguj się do Google',
+      'signout' : 'Wyloguj się z Google',
     },
     'general' : {
       'lives' : 'Życia',

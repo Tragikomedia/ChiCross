@@ -8,6 +8,7 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/localization/localization.dart';
+import 'package:chinese_picross/firebase/sign_in.dart';
 import 'package:provider/provider.dart';
 
 class MainMenu extends StatelessWidget {
