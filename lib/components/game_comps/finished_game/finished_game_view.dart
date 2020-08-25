@@ -1,4 +1,4 @@
-import 'package:chinese_picross/firebase/sign_in.dart';
+import 'package:chinese_picross/firebase/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/components/game_comps/finished_game/defeat_view.dart';

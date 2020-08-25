@@ -51,7 +51,8 @@ const Map localization = {
       'signout' : 'Sign out of Google',
       'sync' : 'Sync',
       'erase' : 'Erase',
-      'text' : "Sign in with Google to automatically preserve your progress in Google Firebase. Press 'Sync' to download your save file or 'Erase' to delete your data.",
+      'text' : "Sign in with Google to automatically preserve your progress in Google Firebase.\n Press 'Sync' to download your save file or 'Erase' to delete your data.",
+      'erasemessage' : 'Are you sure you want to erase your progress?',
     },
     'general': {
       'lives': 'Lives',
@@ -202,7 +203,8 @@ const Map localization = {
       'signout' : 'Wyloguj się z Google',
       'sync' : 'Synch.',
       'erase' : 'Wymaż',
-      'text' : "Zaloguj się na konto Google, by automatycznie przechowywać postępy na serwerach Google Firebase. Użyj przycisku 'Synch.', aby ściągnąć zapisy lub 'Wymaż', aby je usunąć."
+      'erasemessage' : 'Czy na pewno chcesz wymazać swoje postępy?',
+      'text' : "Zaloguj się na konto Google, by automatycznie przechowywać postępy na serwerach Google Firebase.\n Użyj przycisku 'Synch.', aby ściągnąć zapisy lub 'Wymaż', aby je usunąć."
     },
     'general' : {
       'lives' : 'Życia',
