@@ -13,5 +13,5 @@ double gameFontSize(BuildContext context, int width, int height) {
   return MediaQuery.of(context).size.width * ((height + 3)/(width + 2))/27 - 0.4;
 }
 double informationBarFontSize(BuildContext context, int width, int height) {
-  return informationBarHeight(context, width, height) / 20;
+  return informationBarHeight(context, width, height) / 22;
 }

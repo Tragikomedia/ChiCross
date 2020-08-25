@@ -71,7 +71,7 @@ class SettingsBody extends StatelessWidget {
               color: strongestColor,
               text: text['syncprog'],
               child: SettingsButton(
-                text: 'TODO',
+                text: text['proceed'],
                 textColor: primaryColor,
                 backgroundColor: strongestColor,
                 onPressed: () {

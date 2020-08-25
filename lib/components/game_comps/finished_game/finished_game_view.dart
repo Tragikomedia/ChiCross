@@ -1,3 +1,4 @@
+import 'package:chinese_picross/firebase/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chinese_picross/components/game_comps/finished_game/defeat_view.dart';
@@ -23,6 +24,7 @@ class _FinishedGameViewState extends State<FinishedGameView> {
       var progressProvider = Provider.of<ProgressProvider>(context, listen: false);
       if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
         progressProvider.markCompleted(widget.gameNumber);
+        saveUserProgressInFirestore(widget.gameNumber);
       }
       progressProvider.eraseLevelProgress(widget.gameNumber);
     });

@@ -15,7 +15,7 @@ class PreferencesProvider extends ChangeNotifier {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     _themeNumber = (prefs.getInt('theme') ?? 0);
     _lives = (prefs.getInt('lives') ?? 5);
-    _autosaveOn = (prefs.getBool('autosave') ?? false);
+    _autosaveOn = (prefs.getBool('autosave') ?? true);
     _language = (prefs.getString('language') ?? 'en');
     _choseLanguage = (prefs.getBool('choseLanguage') ?? false);
     notifyListeners();

@@ -18,6 +18,7 @@ const Map localization = {
       'language': 'Language',
       'currentlang': 'English',
       'syncprog': 'Synchronise progress',
+      'proceed' : 'Proceed',
       'eraseprog': 'Erase progress',
       'erase': 'Erase',
       'confirmationtext': 'Do you want to erase progress?',
@@ -44,10 +45,13 @@ const Map localization = {
     'firebase' : {
       'synchro' : 'Synchronisation',
       'loggedas' : 'Logged user',
-      'nousers' : 'Currently no logged users',
+      'nousers' : 'Sign in to preserve progress',
       'error' : 'Something went wrong, authorisation failed!',
       'signin' : 'Sign in with Google',
       'signout' : 'Sign out of Google',
+      'sync' : 'Sync',
+      'erase' : 'Erase',
+      'text' : "Sign in with Google to automatically preserve your progress in Google Firebase. Press 'Sync' to download your save file or 'Erase' to delete your data.",
     },
     'general': {
       'lives': 'Lives',
@@ -165,6 +169,7 @@ const Map localization = {
       'language' : 'Język',
       'currentlang' : 'polski',
       'syncprog' : 'Synchronizuj postępy',
+      'proceed' : 'Przejdź',
       'eraseprog' : 'Wymaż postępy',
       'erase' : 'Wymaż',
       'confirmationtext' : 'Czy chcesz wymazać wszelkie postępy?',
@@ -195,6 +200,9 @@ const Map localization = {
       'error' : 'Coś poszło nie tak, autoryzacja konta nie powiodła się!',
       'signin' : 'Zaloguj się do Google',
       'signout' : 'Wyloguj się z Google',
+      'sync' : 'Synch.',
+      'erase' : 'Wymaż',
+      'text' : "Zaloguj się na konto Google, by automatycznie przechowywać postępy na serwerach Google Firebase. Użyj przycisku 'Synch.', aby ściągnąć zapisy lub 'Wymaż', aby je usunąć."
     },
     'general' : {
       'lives' : 'Życia',
