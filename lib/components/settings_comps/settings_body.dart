@@ -11,16 +11,14 @@ import 'package:chinese_picross/utilities/general_utils/transition_animation.dar
 import 'package:provider/provider.dart';
 
 class SettingsBody extends StatelessWidget {
-  final Color primaryColor;
-  final Color strongestColor;
-
-  SettingsBody({@required this.primaryColor, @required this.strongestColor});
 
   @override
   Widget build(BuildContext context) {
     var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['settings'];
-    var generalText = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general'];
+    var generalText = localization[Provider.of<PreferencesProvider>(context).language]['general'];
     var themes = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['theme'];
+    Color strongestColor = ThemeManager.of(context).colorSet.strongestColor;
+    Color primaryColor = ThemeManager.of(context).colorSet.primaryColor;
     return Consumer<PreferencesProvider>(
       builder: (context, prefs, child) {
         return ListView(

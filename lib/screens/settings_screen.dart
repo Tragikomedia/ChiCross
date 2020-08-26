@@ -11,22 +11,17 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color primaryColor = ThemeManager.of(context).colorSet.primaryColor;
-    Color intermediaryColor = ThemeManager.of(context).colorSet.intermediaryColor;
-    Color strongestColor = ThemeManager.of(context).colorSet.strongestColor;
+    var colorSet = ThemeManager.of(context).colorSet;
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(
               kPreferredAppBarHeight),
           child: GeneralAppBar(
-            text: localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general']['settings'],
-            textColor: strongestColor, 
-            backgroundColor: intermediaryColor,)),
-      backgroundColor: primaryColor,
-      body: SettingsBody(
-        primaryColor: primaryColor,
-        strongestColor: strongestColor,
-      ),
+            text: localization[Provider.of<PreferencesProvider>(context).language]['general']['settings'],
+            textColor: colorSet.strongestColor,
+            backgroundColor: colorSet.intermediaryColor,)),
+      backgroundColor: colorSet.primaryColor,
+      body: SettingsBody(),
     );
   }
 }
