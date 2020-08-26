@@ -38,15 +38,15 @@ class DescriptionScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AdjustedCharacterTile(
-                  child: Hero(
-                    tag: 'character$gameNumber',
+                Hero(
+                  tag: 'character$gameNumber',
+                  child: AdjustedCharacterTile(
                     child: CharacterTile(
                       characterNumber: gameNumber,
                       fontSizeModifier: 4.0,
                     ),
+                    color: colorSet.strongestColor,
                   ),
-                  color: colorSet.strongestColor,
                 ),
                 Flexible(
                     child: DescriptionCard(
