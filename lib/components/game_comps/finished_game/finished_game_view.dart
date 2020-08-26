@@ -15,26 +15,47 @@ class FinishedGameView extends StatefulWidget {
   _FinishedGameViewState createState() => _FinishedGameViewState();
 }
 
-class _FinishedGameViewState extends State<FinishedGameView> {
+class _FinishedGameViewState extends State<FinishedGameView>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<Offset> _offsetAnimation;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      var progressProvider = Provider.of<ProgressProvider>(context, listen: false);
+      var progressProvider =
+          Provider.of<ProgressProvider>(context, listen: false);
       if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
         progressProvider.markCompleted(widget.gameNumber);
         saveUserProgressInFirestore(widget.gameNumber);
       }
       progressProvider.eraseLevelProgress(widget.gameNumber);
     });
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1500),
+      vsync: this,
+    )..forward();
+    _offsetAnimation = Tween<Offset>(
+      begin: Offset(0.0, -1.0),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.bounceOut));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (Provider.of<GridProvider>(context, listen: false).isVictorious) {
-      return VictoryView(gameNumber: widget.gameNumber,);
-    }
-    return DefeatView(gameNumber: widget.gameNumber);
+    return SlideTransition(
+        position: _offsetAnimation,
+        child: Provider.of<GridProvider>(context, listen: false).isVictorious
+            ? VictoryView(
+                gameNumber: widget.gameNumber,
+              )
+            : DefeatView(gameNumber: widget.gameNumber));
   }
 }

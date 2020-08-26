@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:chinese_picross/components/shared_comps/character_tile/character_tile.dart';
 import 'package:chinese_picross/components/collection_comps/footer_text.dart';
 import 'package:chinese_picross/screens/description_screen.dart';
+import 'package:chinese_picross/utilities/general_utils/transition_animation.dart';
 
 class ClickableGridTile extends StatelessWidget {
   final int gameNumber;
@@ -19,7 +20,7 @@ class ClickableGridTile extends StatelessWidget {
         tag: 'character$gameNumber',
         child: GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => DescriptionScreen(gameNumber: gameNumber,)));
+            Navigator.of(context).push(createRoute(DescriptionScreen(gameNumber: gameNumber,), 600));
           },
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 20.0),

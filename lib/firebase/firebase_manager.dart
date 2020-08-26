@@ -9,12 +9,11 @@ final GoogleSignIn _googleSignIn = GoogleSignIn();
 Future<bool> signInWithGoogle() async {
   try {
     final GoogleSignInAccount account = await _googleSignIn.signIn();
-    final GoogleSignInAuthentication googleAuthentication = await account
-        .authentication;
+    final GoogleSignInAuthentication googleAuthentication =
+        await account.authentication;
     final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuthentication.accessToken,
-        idToken: googleAuthentication.idToken
-    );
+        idToken: googleAuthentication.idToken);
     final authResult = await _auth.signInWithCredential(credential);
     final User user = authResult.user;
 
@@ -56,33 +55,41 @@ Future<void> synchronizeDatabases(List completenessTracker) async {
 }
 
 Future<void> initializeDatabase(int numberOfGames) async {
-  var docRef = _firestore.collection('progress').doc(_auth.currentUser.uid);
-  var snapshot = await docRef.get();
-  if (snapshot.exists) {
-    return;
+  try {
+    var docRef = _firestore.collection('progress').doc(_auth.currentUser.uid);
+    var snapshot = await docRef.get();
+    if (snapshot.exists) {
+      return;
+    }
+    Map<String, dynamic> progressToBeSaved = {};
+    for (int i = 0; i < numberOfGames; i++) {
+      progressToBeSaved[i.toString()] = false;
+    }
+    await docRef.set(progressToBeSaved, SetOptions(merge: true));
+  } catch (e) {
+    print(e);
   }
-  Map<String, dynamic> progressToBeSaved = {};
-  for (int i = 0; i < numberOfGames; i++) {
-    progressToBeSaved[i.toString()] = false;
-  }
-  await docRef.set(progressToBeSaved, SetOptions(merge: true));
   return;
 }
 
 Future<void> mergeLocalAndExternalDb(List completenessTracker) async {
-  var docRef = _firestore.collection('progress').doc(_auth.currentUser.uid);
-  var snapshot = await docRef.get();
-  var data = snapshot.data();
-  Map<String, dynamic> progressToBeSaved = {};
-  for (int i = 0; i < completenessTracker.length; i++) {
-    if (data[i.toString()]) {
-      completenessTracker[i] = true;
-    } else if (completenessTracker[i] && !data[i.toString()]) {
-      progressToBeSaved[i.toString()] = true;
+  try {
+    var docRef = _firestore.collection('progress').doc(_auth.currentUser.uid);
+    var snapshot = await docRef.get();
+    var data = snapshot.data();
+    Map<String, dynamic> progressToBeSaved = {};
+    for (int i = 0; i < completenessTracker.length; i++) {
+      if (data[i.toString()]) {
+        completenessTracker[i] = true;
+      } else if (completenessTracker[i] && !data[i.toString()]) {
+        progressToBeSaved[i.toString()] = true;
+      }
     }
-  }
-  if (progressToBeSaved.isNotEmpty) {
-    await docRef.update(progressToBeSaved);
+    if (progressToBeSaved.isNotEmpty) {
+      await docRef.update(progressToBeSaved);
+    }
+  } catch (e) {
+    print(e);
   }
   return;
 }
@@ -99,7 +106,10 @@ void saveUserProgressInFirestore(int gameNumber) async {
   if (_auth.currentUser == null) {
     return;
   }
-  await _firestore.collection('progress').doc(_auth.currentUser.uid).update({gameNumber.toString() : true});
+  await _firestore
+      .collection('progress')
+      .doc(_auth.currentUser.uid)
+      .update({gameNumber.toString(): true});
 }
 
 get currentUserName {

@@ -7,6 +7,7 @@ import 'package:chinese_picross/components/settings_comps/confirmation_popup.dar
 import 'package:chinese_picross/localization/localization.dart';
 import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
+import 'package:chinese_picross/utilities/general_utils/transition_animation.dart';
 import 'package:provider/provider.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -15,7 +16,6 @@ class SettingsBody extends StatelessWidget {
 
   SettingsBody({@required this.primaryColor, @required this.strongestColor});
 
-  // TODO Firebase!
   @override
   Widget build(BuildContext context) {
     var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['settings'];
@@ -75,7 +75,7 @@ class SettingsBody extends StatelessWidget {
                 textColor: primaryColor,
                 backgroundColor: strongestColor,
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => FirebaseScreen()));
+                  Navigator.of(context).push(createRoute(FirebaseScreen()));
                 },
               ),
             ),

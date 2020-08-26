@@ -5,6 +5,7 @@ import 'package:chinese_picross/providers/grid_provider.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/utilities/general_utils/constants.dart';
 import 'package:chinese_picross/localization/localization.dart';
+import 'package:chinese_picross/utilities/general_utils/transition_animation.dart';
 import 'package:provider/provider.dart';
 
 class PlayButton extends StatelessWidget {
@@ -28,7 +29,7 @@ class PlayButton extends StatelessWidget {
           ),),
       onPressed: () {
         Navigator.pop(context);
-        Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeNotifierProvider(create: (context) => GridProvider(
+        Navigator.of(context).push(createRoute(ChangeNotifierProvider(create: (context) => GridProvider(
             game: picrossList[gameNumber].game, lives: (saveData == null) ? Provider.of<PreferencesProvider>(context, listen: false).lives : saveData[2],
             loadSaveFile: (saveData == null) ? false : true,
             saveData: saveData),child:GameScreen(gameNumber: gameNumber,))));

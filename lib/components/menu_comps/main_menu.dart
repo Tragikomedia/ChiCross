@@ -8,15 +8,15 @@ import 'package:chinese_picross/themes/theme_manager.dart';
 import 'package:chinese_picross/providers/preferences_provider.dart';
 import 'package:chinese_picross/providers/progress_provider.dart';
 import 'package:chinese_picross/localization/localization.dart';
-import 'package:chinese_picross/firebase/firebase_manager.dart';
+import 'package:chinese_picross/utilities/general_utils/transition_animation.dart';
 import 'package:provider/provider.dart';
 
 class MainMenu extends StatelessWidget {
-
   List _getCollectionList(BuildContext context) {
-    List completedList = Provider.of<ProgressProvider>(context, listen: false).completenessTracker;
+    List completedList = Provider.of<ProgressProvider>(context, listen: false)
+        .completenessTracker;
     List completedPuzzles = [];
-    for (int i = 0; i < completedList.length; i++)  {
+    for (int i = 0; i < completedList.length; i++) {
       if (completedList[i]) {
         completedPuzzles.add(i);
       }
@@ -27,8 +27,12 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var colorSet = ThemeManager.of(context).colorSet;
-    var text = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['menu'];
-    var generalText = localization[Provider.of<PreferencesProvider>(context, listen: false).language]['general'];
+    var text = localization[
+            Provider.of<PreferencesProvider>(context, listen: false).language]
+        ['menu'];
+    var generalText = localization[
+            Provider.of<PreferencesProvider>(context, listen: false).language]
+        ['general'];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -37,7 +41,7 @@ class MainMenu extends StatelessWidget {
           textColor: colorSet.primaryColor,
           backgroundColor: colorSet.secondaryColor,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SelectionScreen()));
+            Navigator.of(context).push(createRoute(SelectionScreen()));
           },
         ),
         MenuButton(
@@ -45,7 +49,7 @@ class MainMenu extends StatelessWidget {
           textColor: colorSet.primaryColor,
           backgroundColor: colorSet.secondaryColor,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => TutorialScreen()));
+            Navigator.of(context).push(createRoute(TutorialScreen()));
           },
         ),
         MenuButton(
@@ -53,7 +57,9 @@ class MainMenu extends StatelessWidget {
           textColor: colorSet.primaryColor,
           backgroundColor: colorSet.secondaryColor,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => CollectionScreen(completedPuzzles: _getCollectionList(context),)));
+            Navigator.of(context).push(createRoute(CollectionScreen(
+              completedPuzzles: _getCollectionList(context),
+            )));
           },
         ),
         MenuButton(
@@ -61,10 +67,10 @@ class MainMenu extends StatelessWidget {
           textColor: colorSet.primaryColor,
           backgroundColor: colorSet.secondaryColor,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+            Navigator.of(context).push(createRoute(SettingsScreen()));
           },
         ),
-        ],
+      ],
     );
   }
 }
