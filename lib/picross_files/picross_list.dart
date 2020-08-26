@@ -286,4 +286,36 @@ List<Picross> picrossList = [
         Example(word: '银河', meaning: 'Milky Way'),
         Example(word: '银幕', meaning: 'Screen'),
       ]),
+  Picross(
+      number: 8,
+      game: Game(gameNumber: 8, correctTiles: [3, 8, 11, 13, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 33, 36, 40, 43, 46, 53, 58, 60, 61, 62, 63, 64, 65, 66, 67, 73, 76, 77, 78, 80, 81, 83, 85, 89, 91, 93, 97, 98, 99]
+      ),
+      description: Description(
+          character: '我', chinesePronunciation: 'wǒ', meaning: 'I'),
+      examples: [
+        Example(word: '我们', meaning: 'We, us'),
+        Example(word: '我国', meaning: 'Motherland'),
+        Example(word: '自我', meaning: 'Oneself'),
+      ]),
+  Picross(
+      number: 9,
+      game: Game(gameNumber: 9, correctTiles: [6, 11, 12, 13, 16, 20, 22, 24, 26, 30, 31, 32, 34, 36, 42, 44, 46, 48, 50, 51, 52, 54, 56, 59, 62, 64, 65, 66, 67, 68, 69, 71, 72, 74, 76, 80, 82, 83, 86, 96]),
+      description: Description(
+          character: '学', chinesePronunciation: 'xué', meaning: 'Study'),
+      examples: [
+        Example(word: '学习', meaning: 'Learn'),
+        Example(word: '学校', meaning: 'School'),
+        Example(word: '学生', meaning: 'Student'),
+      ]),
+  Picross(
+      number: 10,
+      game: Game(gameNumber: 10, correctTiles: [0, 1, 3, 7, 8, 9, 11, 13, 16, 17, 18, 24, 25, 26, 45, 49, 52, 55, 57, 58, 59, 62, 65, 66, 69, 70, 71, 72, 73, 74, 75, 79, 82, 85, 89, 92, 95, 98, 99]),
+      description: Description(
+          character: '法', chinesePronunciation: 'fǎ', meaning: 'Law'),
+      examples: [
+        Example(word: '法律', meaning: 'Statute'),
+        Example(word: '法院', meaning: 'Court'),
+        Example(word: '法国', meaning: 'France'),
+      ]),
 ];
+

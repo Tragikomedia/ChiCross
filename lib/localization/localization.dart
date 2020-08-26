@@ -114,7 +114,25 @@ const Map localization = {
         'Bank': 'Bank',
         'Milky Way': 'Milky Way',
         'Screen': 'Screen',
-      }
+      },
+      8 : {
+        'I' : 'I',
+        'We, us' : 'We, us',
+        'Motherland' : 'Motherland',
+        'Oneself' : 'Self'
+      },
+      9 : {
+        'Study' : 'Study',
+        'Learn' : 'Learn',
+        'School' : 'School',
+        'Student' : 'Student'
+      },
+      10 : {
+        'Law' : 'Law',
+        'Statute' : 'Statute',
+        'Court' : 'Court',
+        'France' : 'France'
+      },
     },
     'tutorial': {
       0: {
@@ -266,6 +284,24 @@ const Map localization = {
         'Bank' : 'Bank',
         'Milky Way' : 'Droga Mleczna',
         'Screen' : 'Ekran',
+      },
+      8 : {
+        'I' : 'Ja',
+        'We, us' : 'My, nas',
+        'Motherland' : 'Ojczyzna',
+        'Oneself' : 'Samo-'
+      },
+      9 : {
+        'Study' : 'Kształcić się',
+        'Learn' : 'Uczyć się',
+        'School' : 'Szkoła',
+        'Student' : 'Uczeń'
+      },
+      10 : {
+        'Law' : 'Prawo',
+        'Statute' : 'Prawo',
+        'Court' : 'Sąd',
+        'France' : 'Francja',
       },
     },
     'tutorial': {
