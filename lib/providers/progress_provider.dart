@@ -57,6 +57,14 @@ class ProgressProvider extends ChangeNotifier {
     return true;
   }
 
+  void saveSynchronizedData() async {
+    for (int index = 0; index < completenessTracker.length; index++) {
+     if (completenessTracker[index]) {
+       markCompleted(index);
+     }
+      }
+    }
+
   void markCompleted(int num) async {
     await database.update('progress',{'completed':1},where: "number = $num",);
     completenessTracker[num] = true;

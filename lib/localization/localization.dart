@@ -227,6 +227,36 @@ const Map localization = {
         'Request' : 'Request',
         'Invitation' : 'Invitation',
       },
+      27 : {
+        'Eat' : 'Eat',
+        'Suffer losses' : 'Suffer losses',
+        'Shocked' : 'Shocked',
+        'Bear hardships' : 'Bear hardships',
+      },
+      28 : {
+        'Flow' : 'Flow',
+        'Popular' : 'Popular',
+        'Spread' : 'Spread',
+        'Circulate' : 'Circulate',
+      },
+      29 : {
+        'All' : 'All',
+        'In general' : 'In general',
+        'Absolutely all' : 'Absolutely all',
+        'Gondola' : 'Gondola',
+      },
+      30 : {
+        'Single' : 'Single',
+        'Unique' : 'Unique',
+        'Independent' : 'Independent',
+        'Dictatorship' : 'Dictatorship',
+      },
+      31 : {
+        'Morality' : 'Morality',
+        'Virtue' : 'Virtue',
+        'Ethics' : 'Ethics',
+        'Germany' : 'Germany',
+      },
     },
     'tutorial': {
       0: {
@@ -484,12 +514,42 @@ const Map localization = {
         'Cake' : 'Ciasto',
         'Eggshell' : 'Skorupka',
         'Yolk' : 'Żółtko',
-      },//TODO fix 26
+      },
       26 : {
         'Ask' : 'Pytać',
         'Invite' : 'Zapraszać',
         'Request' : 'Prosić',
         'Invitation' : 'Zaproszenie',
+      },
+      27 : {
+        'Eat' : 'Jeść',
+        'Suffer losses' : 'Tracić',
+        'Shocked' : 'Być zszokowanym',
+        'Bear hardships' : 'Znosić trudy',
+      },
+      28 : {
+        'Flow' : 'Płynąć',
+        'Popular' : 'Popularny',
+        'Spread' : 'Roznosić',
+        'Circulate' : 'Cyrkulować',
+      },
+      29 : {
+        'All' : 'Wszystko',
+        'In general' : 'Ogólnie',
+        'Absolutely all' : 'Absolutnie wszystko',
+        'Gondola' : 'Gondola',
+      },
+      30 : {
+        'Single' : 'Jedyny',
+        'Unique' : 'Unikatowy',
+        'Independent' : 'Niezależny',
+        'Dictatorship' : 'Dyktatura',
+      },
+      31 : {
+        'Morality' : 'Moralność',
+        'Virtue' : 'Cnota',
+        'Ethics' : 'Etyka',
+        'Germany' : 'Niemcy',
       },
     },
     'tutorial': {

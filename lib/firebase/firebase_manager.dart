@@ -79,10 +79,14 @@ Future<void> mergeLocalAndExternalDb(List completenessTracker) async {
     var data = snapshot.data();
     Map<String, dynamic> progressToBeSaved = {};
     for (int i = 0; i < completenessTracker.length; i++) {
-      if (data[i.toString()]) {
-        completenessTracker[i] = true;
-      } else if (completenessTracker[i] && !data[i.toString()]) {
-        progressToBeSaved[i.toString()] = true;
+      try {
+        if (data[i.toString()]) {
+          completenessTracker[i] = true;
+        } else if (completenessTracker[i] && !data[i.toString()]) {
+          progressToBeSaved[i.toString()] = true;
+        }
+      } catch (e) {
+        print(e);
       }
     }
     if (progressToBeSaved.isNotEmpty) {

@@ -460,7 +460,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 25,
-      game: Game(gameNumber: 25, correctTiles: [2, 3, 4, 9, 11, 19, 20, 22, 25, 26, 27, 29, 30, 33, 35, 37, 39, 40, 44, 45, 47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 64, 65, 67, 69, 70, 72, 74, 75, 77, 79, 80, 81, 84, 85, 86, 87, 89, 94, 99]),
+      game: Game(gameNumber: 25, correctTiles: [2, 3, 4, 9, 11, 12, 19, 20, 22, 23, 25, 26, 27, 29, 30, 33, 35, 37, 39, 40, 44, 45, 47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 64, 65, 67, 69, 70, 72, 74, 75, 77, 79, 80, 81, 84, 85, 86, 87, 89, 94, 99]),
       description: Description(
           character: '蛋', chinesePronunciation: 'dàn', meaning: 'Egg'),
       examples: [
@@ -477,6 +477,56 @@ List<Picross> picrossList = [
         Example(word: '请客', meaning: 'Invite'),
         Example(word: '请求', meaning: 'Request'),
         Example(word: '请柬', meaning: 'Invitation'),
+      ]),
+  Picross(
+      number: 27,
+      game: Game(gameNumber: 27, correctTiles: [3, 4, 5, 6, 7, 13, 17, 23, 24, 25, 26, 27, 31, 32, 40, 41, 43, 47, 48, 49, 51, 53, 56, 59, 61, 63, 65, 66, 69, 71, 73, 75, 79, 81, 83, 84, 85, 89, 97, 98, 99]),
+      description: Description(
+          character: '吃', chinesePronunciation: 'chī', meaning: 'Eat'),
+      examples: [
+        Example(word: '吃亏', meaning: 'Suffer losses'),
+        Example(word: '吃惊', meaning: 'Shocked'),
+        Example(word: '吃苦', meaning: 'Bear hardships'),
+      ]),
+  Picross(
+      number: 28,
+      game: Game(gameNumber: 28, correctTiles: [1, 3, 5, 6, 7, 8, 9, 11, 13, 29, 31, 34, 35, 37, 38, 39, 41, 43, 45, 50, 51, 52, 55, 57, 58, 59, 61, 65, 71, 75, 77, 78, 79, 81, 84, 85, 89, 98, 99]),
+      description: Description(
+          character: '流', chinesePronunciation: 'liú', meaning: 'Flow'),
+      examples: [
+        Example(word: '流行', meaning: 'Popular'),
+        Example(word: '流传', meaning: 'Spread'),
+        Example(word: '流动', meaning: 'Circulate'),
+      ]),
+  Picross(
+      number: 29,
+      game: Game(gameNumber: 29, correctTiles: [3, 5, 11, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 29, 31, 33, 34, 35, 36, 37, 38, 39, 42, 43, 51, 53, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 77, 81, 83, 84, 88, 91, 92, 95, 96, 97, 98]),
+      description: Description(
+          character: '都', chinesePronunciation: 'dōu', meaning: 'All'),
+      examples: [
+        Example(word: '大都', meaning: 'In general'),
+        Example(word: '全都', meaning: 'Absolutely all'),
+        Example(word: '贡都拉', meaning: 'Gondola'),
+      ]),
+  Picross(
+      number: 30,
+      game: Game(gameNumber: 30, correctTiles: [0, 1, 3, 5, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 31, 38, 42, 43, 44, 45, 48, 52, 55, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 72, 75, 78, 82, 85, 88, 92, 93, 94, 95, 97, 98, 99]),
+      description: Description(
+          character: '独', chinesePronunciation: 'dú', meaning: 'Single'),
+      examples: [
+        Example(word: '独特', meaning: 'Unique'),
+        Example(word: '独立', meaning: 'Independent'),
+        Example(word: '独裁', meaning: 'Dictatorship'),
+      ]),
+  Picross(
+      number: 31, //to fix 30
+      game: Game(gameNumber: 31, correctTiles: [2, 3, 5, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 29, 33, 34, 35, 37, 41, 43, 45, 47, 48, 49, 51, 52, 53, 54, 55, 57, 59, 60, 61, 63, 65, 67, 68, 69, 71, 73, 74, 75, 77, 79, 81, 83, 85, 87, 89, 93, 94, 95, 97, 98]),
+      description: Description(
+          character: '德', chinesePronunciation: 'dé', meaning: 'Morality'),
+      examples: [
+        Example(word: '美德', meaning: 'Virtue'),
+        Example(word: '道德', meaning: 'Ethics'),
+        Example(word: '德国', meaning: 'Germany'),
       ]),
 ];
 

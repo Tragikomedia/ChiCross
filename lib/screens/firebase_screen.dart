@@ -78,8 +78,9 @@ class _FirebaseScreenState extends State<FirebaseScreen> {
                         text: loc['sync'],
                         textColor: colorSet.intermediaryColor,
                         backgroundColor: colorSet.strongestColor,
-                        onPressed: () {
-                          synchronizeDatabases(Provider.of<ProgressProvider>(context, listen: false).completenessTracker);
+                        onPressed: () async {
+                          await synchronizeDatabases(Provider.of<ProgressProvider>(context, listen: false).completenessTracker);
+                          Provider.of<ProgressProvider>(context, listen: false).saveSynchronizedData();
                         },
                       ),
                     ),
