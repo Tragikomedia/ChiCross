@@ -52,19 +52,22 @@ class ProgressProvider extends ChangeNotifier {
         completenessTracker[map['number']] = map['completed'] == 1;
       }
       if (completenessTracker.contains(null)) {
-        int start = completenessTracker.indexOf(null);
-        print(start);
-        for (int i = start; i < completenessTracker.length; i++) {
-          completenessTracker[i] = false;
-          await database.insert(
-              'progress', ProgressModel(number: i, isCompleted: false).toMap(),
-              conflictAlgorithm: ConflictAlgorithm.replace);
-        }
+        incorporateAddedLevels();
       }
       firstTimeInit = false;
     }
     notifyListeners();
     return true;
+  }
+
+  void incorporateAddedLevels() async {
+    int start = completenessTracker.indexOf(null);
+    for (int i = start; i < completenessTracker.length; i++) {
+      completenessTracker[i] = false;
+      await database.insert(
+          'progress', ProgressModel(number: i, isCompleted: false).toMap(),
+          conflictAlgorithm: ConflictAlgorithm.replace);
+    }
   }
 
   void saveSynchronizedData() async {

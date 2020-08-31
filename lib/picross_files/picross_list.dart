@@ -578,5 +578,135 @@ List<Picross> picrossList = [
         Example(word: '强大', meaning: 'Powerful'),
         Example(word: '强盗', meaning: 'Robber'),
       ]),
+  Picross(
+      number: 37,
+      game: Game(gameNumber: 37, correctTiles: [1, 2, 4, 5, 7, 10, 12, 13, 15, 17, 21, 22, 25, 27, 36, 38, 44, 46, 47, 50, 52, 54, 57, 59, 60, 62, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 77, 84, 86, 88, 98]),
+      description: Description(
+          character: '绿', chinesePronunciation: 'lǜ', meaning: 'Green'),
+      examples: [
+        Example(word: '绿茶', meaning: 'Green tea'),
+        Example(word: '绿灯', meaning: 'Green light'),
+        Example(word: '绿洲', meaning: 'Oasis'),
+      ]),
+  Picross(
+      number: 38,
+      game: Game(gameNumber: 38, correctTiles: [2, 6, 7, 8, 9, 12, 13, 14, 15, 22, 24, 28, 29, 32, 34, 35, 36, 37, 38, 39, 41, 42, 43, 50, 52, 54, 55, 56, 57, 58, 59, 62, 64, 65, 69, 72, 74, 76, 77, 82, 84, 86, 88, 92, 96, 99]),
+      description: Description(
+          character: '旅', chinesePronunciation: 'lǚ', meaning: 'Travel'),
+      examples: [
+        Example(word: '旅行', meaning: 'Travel'),
+        Example(word: '旅途', meaning: 'Journey'),
+        Example(word: '旅客', meaning: 'Traveller'),
+      ]),
+  Picross(
+      number: 39,
+      game: Game(gameNumber: 39, correctTiles: [2, 5, 12, 15, 16, 17, 18, 19, 23, 29, 33, 35, 38, 43, 45, 46, 47, 48, 53, 55, 58, 60, 61, 62, 63, 64, 65, 73, 75, 76, 77, 78, 79, 83, 89, 93, 98, 99]),
+      description: Description(
+          character: '试', chinesePronunciation: 'shì', meaning: 'Test'),
+      examples: [
+        Example(word: '考试', meaning: 'Exam'),
+        Example(word: '试验', meaning: 'Experiment'),
+        Example(word: '尝试', meaning: 'Try'),
+      ]),
+  Picross(
+      number: 40,
+      game: Game(gameNumber: 40, correctTiles: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 22, 24, 25, 26, 27, 29, 30, 32, 34, 36, 38, 39, 40, 42, 44, 45, 46, 47, 49, 50, 59, 60, 64, 66, 67, 70, 74, 79, 80, 82, 83, 84, 85, 86, 87, 88, 90, 94]),
+      description: Description(
+          character: '厨', chinesePronunciation: 'chú', meaning: 'Cook'),
+      examples: [
+        Example(word: '厨师', meaning: 'Cook'),
+        Example(word: '厨房', meaning: 'Kitchen'),
+        Example(word: '厨具', meaning: 'Kitchen utensils'),
+      ]),
+  Picross(
+      number: 41,
+      game: Game(gameNumber: 41, correctTiles: [2, 4, 6, 7, 8, 9, 12, 14, 23, 26, 31, 33, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 81, 83, 85, 89, 93, 96, 98, 99]),
+      description: Description(
+          character: '港', chinesePronunciation: 'gǎng', meaning: 'Harbour'),
+      examples: [
+        Example(word: '港口', meaning: 'Port'),
+        Example(word: '香港', meaning: 'Hong Kong'),
+        Example(word: '港区', meaning: 'Docks'),
+      ]),
+  Picross(
+      number: 42,
+      game: Game(gameNumber: 42, correctTiles: [1, 4, 6, 7, 8, 10, 12, 14, 20, 23, 24, 26, 27, 28, 29, 30, 31, 32, 33, 34, 39, 40, 44, 46, 49, 50, 54, 56, 57, 59, 60, 61, 62, 63, 64, 69, 70, 73, 74, 78, 79, 80, 82, 84, 86, 91, 94, 96, 97, 98]),
+      description: Description(
+          character: '恶', chinesePronunciation: 'è', meaning: 'Evil'),
+      examples: [
+        Example(word: '恶梦', meaning: 'Nightmare'),
+        Example(word: '罪恶', meaning: 'Crime'),
+        Example(word: '恶劣', meaning: 'Disgusting'),
+      ]),
+  Picross(
+      number: 43,
+      game: Game(gameNumber: 43, correctTiles: [0, 5, 6, 9, 10, 13, 14, 18, 19, 20, 21, 22, 25, 26, 27, 28, 30, 32, 36, 40, 42, 43, 44, 45, 46, 50, 52, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 74, 79, 80, 84, 89, 90, 93, 94, 97, 98, 99]),
+      description: Description(
+          character: '死', chinesePronunciation: 'sǐ', meaning: 'Die'),
+      examples: [
+        Example(word: '死亡', meaning: 'Death'),
+        Example(word: '死刑', meaning: 'Death penalty'),
+        Example(word: '杀死', meaning: 'Kill'),
+      ]),
+  Picross(
+      number: 44,
+      game: Game(gameNumber: 44, correctTiles: [1, 2, 5, 6, 8, 10, 12, 13, 14, 16, 18, 22, 26, 28, 31, 34, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 57, 59, 62, 65, 66, 67, 69, 72, 74, 75, 77, 79, 82, 83, 85, 87, 89, 95, 96, 97, 99]),
+      description: Description(
+          character: '绝', chinesePronunciation: 'jué', meaning: 'Sever'),
+      examples: [
+        Example(word: '绝对', meaning: 'Absolutely'),
+        Example(word: '绝望', meaning: 'Despair'),
+        Example(word: '拒绝', meaning: 'Refuse'),
+      ]),
+  Picross(
+      number: 45,
+      game: Game(gameNumber: 45, correctTiles: [5, 8, 10, 11, 12, 13, 15, 16, 17, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30, 32, 33, 35, 36, 37, 40, 41, 42, 43, 45, 48, 55, 59, 62, 63, 66, 68, 69, 72, 76, 78, 82, 85, 86, 88, 91, 92, 94, 95, 98]),
+      description: Description(
+          character: '影', chinesePronunciation: 'yǐng', meaning: 'Shadow'),
+      examples: [
+        Example(word: '电影', meaning: 'Movie'),
+        Example(word: '影响', meaning: 'Influence'),
+        Example(word: '影像', meaning: 'Image'),
+      ]),
+  Picross(
+      number: 46,
+      game: Game(gameNumber: 46, correctTiles: [0, 4, 10, 12, 13, 14, 15, 16, 20, 21, 22, 24, 26, 30, 34, 35, 36, 39, 47, 49, 50, 52, 53, 54, 55, 56, 58, 59, 60, 62, 64, 66, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 82, 84, 86, 89, 90, 92, 93, 94, 95, 96, 99]),
+      description: Description(
+          character: '硬', chinesePronunciation: 'yìng', meaning: 'Hard'),
+      examples: [
+        Example(word: '硬币', meaning: 'Coin'),
+        Example(word: '僵硬', meaning: 'Stiff'),
+        Example(word: '硬件', meaning: 'Hardware'),
+      ]),
+  Picross(
+      number: 47,
+      game: Game(gameNumber: 47, correctTiles: [2, 7, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 23, 26, 30, 31, 32, 36, 39, 41, 43, 44, 45, 46, 48, 49, 51, 53, 56, 57, 58, 61, 62, 63, 64, 65, 66, 71, 73, 76, 77, 78, 83, 84, 85, 86, 88, 89, 96, 99]),
+      description: Description(
+          character: '换', chinesePronunciation: 'huàn', meaning: 'Change'),
+      examples: [
+        Example(word: '交换', meaning: 'Exchange'),
+        Example(word: '转换', meaning: 'Transform'),
+        Example(word: '替换', meaning: 'Replace'),
+      ]),
+  Picross(
+      number: 48,
+      game: Game(gameNumber: 48, correctTiles: [2, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 35, 42, 43, 44, 46, 49, 50, 52, 54, 56, 58, 59, 60, 62, 64, 65, 66, 67, 70, 71, 72, 74, 76, 78, 79, 82, 84, 86, 89, 92, 96]),
+      description: Description(
+          character: '候', chinesePronunciation: 'hòu', meaning: 'Wait'),
+      examples: [
+        Example(word: '时候', meaning: 'Time'),
+        Example(word: '气候', meaning: 'Climate'),
+        Example(word: '候选', meaning: 'Candidate'),
+      ]),
+  Picross(
+      number: 49,
+      game: Game(gameNumber: 49, correctTiles: [2, 3, 5, 6, 8, 10, 11, 13, 14, 16, 18, 23, 26, 28, 32, 36, 38, 52, 62, 65, 67, 68, 69, 71, 72, 73, 74, 75, 77, 79, 82, 85, 87, 88, 89, 92]),
+      description: Description(
+          character: '结', chinesePronunciation: 'jié', meaning: 'Tie'),
+      examples: [
+        Example(word: '结果', meaning: 'Result'),
+        Example(word: '结构', meaning: 'Structure'),
+        Example(word: '结束', meaning: 'End'),
+      ]),
 ];
 
