@@ -257,6 +257,36 @@ const Map localization = {
         'Ethics' : 'Ethics',
         'Germany' : 'Germany',
       },
+      32 : {
+        'Slow' : 'Slow',
+        'Arrogant' : 'Arrogant',
+        'Slow down' : 'Slow down',
+        'Chronic' : 'Chronic',
+      },
+      33 : {
+        'Weak' : 'Weak',
+        'Frail' : 'Frail',
+        'Weak point' : 'Weak point',
+        'Weaken' : 'Weaken',
+      },
+      34 : {
+        'Distinct' : 'Distinct',
+        'Clear' : 'Clear',
+        'Pain' : 'Pain',
+        'Miserable' : 'Miserable',
+      },
+      35 : {
+        'Number' : 'Number',
+        'Data' : 'Data',
+        'Cipher' : 'Cipher',
+        'Quantity' : 'Quantity',
+      },
+      36 : {
+        'Strong' : 'Strong',
+        'Emphasise' : 'Emphasise',
+        'Powerful' : 'Powerful',
+        'Robber' : 'Robber',
+      },
     },
     'tutorial': {
       0: {
@@ -550,6 +580,36 @@ const Map localization = {
         'Virtue' : 'Cnota',
         'Ethics' : 'Etyka',
         'Germany' : 'Niemcy',
+      },
+      32 : {
+        'Slow' : 'Wolno',
+        'Arrogant' : 'Arogancki',
+        'Slow down' : 'Zwolnić',
+        'Chronic' : 'Chroniczny',
+      },
+      33 : {
+        'Weak' : 'Słaby',
+        'Frail' : 'Wątły',
+        'Weak point' : 'Słaby punkt',
+        'Weaken' : 'Osłabić',
+      },
+      34 : {
+        'Distinct' : 'Wyraźny',
+        'Clear' : 'Zrozumiały',
+        'Pain' : 'Ból',
+        'Miserable' : 'Nieszczęśliwy',
+      },
+      35 : {
+        'Number' : 'Liczba',
+        'Data' : 'Dane',
+        'Cipher' : 'Szyfr',
+        'Quantity' : 'Ilość',
+      },
+      36 : {
+        'Strong' : 'Silny',
+        'Emphasise' : 'Zaakcentować',
+        'Powerful' : 'Potężny',
+        'Robber' : 'Opryszek',
       },
     },
     'tutorial': {

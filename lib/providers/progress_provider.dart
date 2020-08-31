@@ -51,6 +51,16 @@ class ProgressProvider extends ChangeNotifier {
       for (Map map in maps) {
         completenessTracker[map['number']] = map['completed'] == 1;
       }
+      if (completenessTracker.contains(null)) {
+        int start = completenessTracker.indexOf(null);
+        print(start);
+        for (int i = start; i < completenessTracker.length; i++) {
+          completenessTracker[i] = false;
+          await database.insert(
+              'progress', ProgressModel(number: i, isCompleted: false).toMap(),
+              conflictAlgorithm: ConflictAlgorithm.replace);
+        }
+      }
       firstTimeInit = false;
     }
     notifyListeners();

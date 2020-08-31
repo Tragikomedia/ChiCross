@@ -519,7 +519,7 @@ List<Picross> picrossList = [
         Example(word: '独裁', meaning: 'Dictatorship'),
       ]),
   Picross(
-      number: 31, //to fix 30
+      number: 31,
       game: Game(gameNumber: 31, correctTiles: [2, 3, 5, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 29, 33, 34, 35, 37, 41, 43, 45, 47, 48, 49, 51, 52, 53, 54, 55, 57, 59, 60, 61, 63, 65, 67, 68, 69, 71, 73, 74, 75, 77, 79, 81, 83, 85, 87, 89, 93, 94, 95, 97, 98]),
       description: Description(
           character: '德', chinesePronunciation: 'dé', meaning: 'Morality'),
@@ -527,6 +527,56 @@ List<Picross> picrossList = [
         Example(word: '美德', meaning: 'Virtue'),
         Example(word: '道德', meaning: 'Ethics'),
         Example(word: '德国', meaning: 'Germany'),
+      ]),
+  Picross(
+      number: 32,
+      game: Game(gameNumber: 32, correctTiles: [3, 4, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 32, 34, 35, 36, 40, 41, 42, 43, 44, 46, 49, 50, 52, 54, 55, 56, 57, 59, 60, 62, 64, 66, 68, 70, 72, 74, 75, 76, 78, 80, 82, 84, 86, 87, 89, 90, 91, 92, 93, 94, 95, 96, 99]),
+      description: Description(
+          character: '慢', chinesePronunciation: 'màn', meaning: 'Slow'),
+      examples: [
+        Example(word: '傲慢', meaning: 'Arrogant'),
+        Example(word: '减慢', meaning: 'Slow down'),
+        Example(word: '慢性', meaning: 'Chronic'),
+      ]),
+  Picross(
+      number: 33,
+      game: Game(gameNumber: 33, correctTiles: [0, 3, 4, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 27, 28, 29, 30, 31, 32, 34, 39, 44, 45, 46, 47, 48, 49, 50, 53, 54, 58, 60, 62, 64, 65, 66, 68, 70, 72, 74, 77, 78, 79, 80, 81, 82, 84, 89, 94, 95, 96, 97, 98, 99]),
+      description: Description(
+          character: '弱', chinesePronunciation: 'ruò', meaning: 'Weak'),
+      examples: [
+        Example(word: '脆弱', meaning: 'Frail'),
+        Example(word: '弱点', meaning: 'Weak point'),
+        Example(word: '削弱', meaning: 'Weaken'),
+      ]),
+  Picross(
+      number: 34,
+      game: Game(gameNumber: 34, correctTiles: [1, 3, 9, 11, 12, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 31, 32, 35, 37, 38, 41, 43, 45, 48, 49, 51, 53, 55, 59, 61, 62, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 77, 79, 81, 82, 85, 87, 89, 91, 93, 95, 97, 99]),
+      description: Description(
+          character: '楚', chinesePronunciation: 'chǔ', meaning: 'Distinct'),
+      examples: [
+        Example(word: '清楚', meaning: 'Clear'),
+        Example(word: '痛楚', meaning: 'Pain'),
+        Example(word: '凄楚', meaning: 'Miserable'),
+      ]),
+  Picross(
+      number: 35,
+      game: Game(gameNumber: 35, correctTiles: [0, 2, 4, 6, 9, 12, 13, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 32, 33, 36, 38, 40, 42, 44, 46, 47, 49, 52, 53, 59, 60, 61, 62, 63, 64, 65, 66, 68, 72, 77, 82, 85, 86, 88, 92, 93, 94, 99]),
+      description: Description(
+          character: '数', chinesePronunciation: 'shù', meaning: 'Number'),
+      examples: [
+        Example(word: '数据', meaning: 'Data'),
+        Example(word: '数码', meaning: 'Cipher'),
+        Example(word: '数量', meaning: 'Quantity'),
+      ]),
+  Picross(
+      number: 36,
+      game: Game(gameNumber: 36, correctTiles: [0, 2, 3, 4, 5, 8, 10, 12, 15, 19, 20, 21, 22, 25, 26, 27, 28, 39, 44, 45, 46, 49, 50, 51, 52, 54, 56, 59, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70, 72, 74, 76, 79, 80, 81, 82, 84, 86, 88, 89, 94, 95, 96, 98, 99]),
+      description: Description(
+          character: '强', chinesePronunciation: 'qiáng', meaning: 'Strong'),
+      examples: [
+        Example(word: '强调', meaning: 'Emphasise'),
+        Example(word: '强大', meaning: 'Powerful'),
+        Example(word: '强盗', meaning: 'Robber'),
       ]),
 ];
 
