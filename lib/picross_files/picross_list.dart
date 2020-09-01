@@ -560,7 +560,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 35,
-      game: Game(gameNumber: 35, correctTiles: [0, 2, 4, 6, 9, 12, 13, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 32, 33, 36, 38, 40, 42, 44, 46, 47, 49, 52, 53, 59, 60, 61, 62, 63, 64, 65, 66, 68, 72, 77, 82, 85, 86, 88, 92, 93, 94, 99]),
+      game: Game(gameNumber: 35, correctTiles: [0, 2, 4, 6, 9, 12, 13, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 32, 33, 36, 38, 40, 42, 44, 46, 47, 49, 52, 53, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 72, 77, 82, 85, 86, 88, 89, 92, 93, 94, 99]),
       description: Description(
           character: '数', chinesePronunciation: 'shù', meaning: 'Number'),
       examples: [
@@ -590,7 +590,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 38,
-      game: Game(gameNumber: 38, correctTiles: [2, 6, 7, 8, 9, 12, 13, 14, 15, 22, 24, 28, 29, 32, 34, 35, 36, 37, 38, 39, 41, 42, 43, 50, 52, 54, 55, 56, 57, 58, 59, 62, 64, 65, 69, 72, 74, 76, 77, 82, 84, 86, 88, 92, 96, 99]),
+      game: Game(gameNumber: 38, correctTiles: [2, 6, 7, 8, 9, 12, 13, 14, 15, 22, 24, 28, 29, 32, 34, 35, 36, 37, 38, 39, 41, 42, 43, 50, 52, 54, 55, 56, 57, 58, 59, 62, 64, 65, 69, 72, 74, 76, 77, 82, 84, 86, 88, 89, 92, 96, 99]),
       description: Description(
           character: '旅', chinesePronunciation: 'lǚ', meaning: 'Travel'),
       examples: [
@@ -610,7 +610,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 40,
-      game: Game(gameNumber: 40, correctTiles: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 22, 24, 25, 26, 27, 29, 30, 32, 34, 36, 38, 39, 40, 42, 44, 45, 46, 47, 49, 50, 59, 60, 64, 66, 67, 70, 74, 79, 80, 82, 83, 84, 85, 86, 87, 88, 90, 94]),
+      game: Game(gameNumber: 40, correctTiles: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 22, 24, 25, 26, 27, 29, 30, 32, 34, 36, 38, 39, 40, 42, 44, 45, 46, 47, 49, 50, 59, 60, 64, 66, 67, 70, 74, 79, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 94]),
       description: Description(
           character: '厨', chinesePronunciation: 'chú', meaning: 'Cook'),
       examples: [
@@ -660,7 +660,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 45,
-      game: Game(gameNumber: 45, correctTiles: [5, 8, 10, 11, 12, 13, 15, 16, 17, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30, 32, 33, 35, 36, 37, 40, 41, 42, 43, 45, 48, 55, 59, 62, 63, 66, 68, 69, 72, 76, 78, 82, 85, 86, 88, 91, 92, 94, 95, 98]),
+      game: Game(gameNumber: 45, correctTiles: [5, 8, 10, 11, 12, 13, 15, 16, 17, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30, 32, 33, 35, 36, 37, 40, 41, 42, 43, 45, 48, 55, 56, 59, 62, 63, 66, 68, 69, 72, 76, 78, 82, 85, 86, 88, 90, 91, 92, 95, 98]),
       description: Description(
           character: '影', chinesePronunciation: 'yǐng', meaning: 'Shadow'),
       examples: [
@@ -670,7 +670,7 @@ List<Picross> picrossList = [
       ]),
   Picross(
       number: 46,
-      game: Game(gameNumber: 46, correctTiles: [0, 4, 10, 12, 13, 14, 15, 16, 20, 21, 22, 24, 26, 30, 34, 35, 36, 39, 47, 49, 50, 52, 53, 54, 55, 56, 58, 59, 60, 62, 64, 66, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 82, 84, 86, 89, 90, 92, 93, 94, 95, 96, 99]),
+      game: Game(gameNumber: 46, correctTiles: [0, 4, 10, 12, 13, 14, 15, 16, 20, 21, 22, 24, 26, 30, 34, 35, 36, 37, 39, 47, 49, 50, 52, 53, 54, 55, 56, 58, 59, 60, 62, 64, 66, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 82, 84, 86, 89, 90, 92, 93, 94, 95, 96, 99]),
       description: Description(
           character: '硬', chinesePronunciation: 'yìng', meaning: 'Hard'),
       examples: [
