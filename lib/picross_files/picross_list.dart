@@ -20,18 +20,17 @@ List<Picross> picrossList = [
   Picross(
       number: 1,
       game: Game(
-        correctTiles: [34, 35, 44, 45],
+        correctTiles: [4, 5, 11, 14, 16, 17, 18, 19, 21, 22, 24, 26, 31, 32, 33, 34, 36, 40, 41, 44, 45, 46, 47, 48, 49, 50, 51, 54, 56, 58, 61, 62, 63, 64, 66, 69, 71, 72, 74, 76, 77, 78, 79, 81, 84, 94, 95],
         gameNumber: 1,
       ),
       description: Description(
-          character: 'A',
-          chinesePronunciation: 'ba',
-          meaning: 'Hajle Selassie'),
+          character: '帝',
+          chinesePronunciation: 'dì',
+          meaning: 'God'),
       examples: [
-        Example(word: '出租车司机', meaning: 'La'),
-        Example(word: '出租车司机', meaning: 'Ma'),
-        Example(word: '出租车司机', meaning: 'Wa'),
-        Example(word: '司机', meaning: 'Driver')
+        Example(word: '帝国', meaning: 'Empire'),
+        Example(word: '皇帝', meaning: 'Emperor'),
+        Example(word: '帝王', meaning: 'Monarch'),
       ]),
   Picross(
       number: 2,
@@ -109,14 +108,14 @@ List<Picross> picrossList = [
       number: 4,
       game: Game(
         gameNumber: 4,
-        correctTiles: [34, 35, 44, 45],
+        correctTiles: [0, 1, 2, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 44, 45, 47, 49, 50, 51, 53, 55, 56, 57, 59, 61, 63, 67, 68, 69, 71, 73, 76, 81, 83, 85, 86, 87, 88, 91, 92, 98, 99],
       ),
       description: Description(
-          character: 'A', chinesePronunciation: 'ba', meaning: 'Nothing'),
+          character: '家', chinesePronunciation: 'jiā', meaning: 'Family'),
       examples: [
-        Example(word: '出租车司机', meaning: 'Nie'),
-        Example(word: '出租车司机', meaning: 'Nein'),
-        Example(word: '出租车司机', meaning: 'No'),
+        Example(word: '国家', meaning: 'Country'),
+        Example(word: '作家', meaning: 'Writer'),
+        Example(word: '家具', meaning: 'Furniture'),
       ]),
   Picross(
       number: 5,

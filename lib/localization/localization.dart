@@ -78,10 +78,10 @@ const Map localization = {
         'Material benefit': 'Material benefit',
       },
       1: {
-        'Hajle Selassie': 'Hajle Selassie',
-        'La': 'La',
-        'Ma': 'Ma',
-        'Wa': 'Wa',
+        'God': 'God',
+        'Empire': 'Empire',
+        'Emperor': 'Emperor',
+        'Monarch': 'Monarch',
       },
       2: {
         'Kind' : 'Kind',
@@ -96,10 +96,10 @@ const Map localization = {
         'Innovation': 'Innovation',
       },
       4: {
-        'Nothing': 'Nothing',
-        'Nie': 'Nie',
-        'Nein': 'Nein',
-        'No': 'No',
+        'Family': 'Family',
+        'Country': 'Country',
+        'Writer': 'Writer',
+        'Furniture': 'Furniture',
       },
       5: {
         'Obtain': 'Obtain',
@@ -482,10 +482,10 @@ const Map localization = {
         'Material benefit': 'Korzyść materialna',
       },
       1 : {
-        'Hajle Selassie' : 'Kazimierz Wielki',
-        'La' : 'Koko',
-        'Ma' : 'Spoko',
-        'Wa' : 'Maroko',
+        'God': 'Bóg',
+        'Empire': 'Cesarz',
+        'Emperor': 'Cesarstwo',
+        'Monarch': 'Monarcha',
       },
       2 : {
         'Kind' : 'Rodzaj',
@@ -500,10 +500,10 @@ const Map localization = {
         'Innovation' : 'Innowacja',
       },
       4 : {
-        'Nothing' : 'Nic',
-        'Nie' : 'Nie',
-        'Nein' : 'Nein',
-        'No' : 'No',
+        'Family': 'Rodzina',
+        'Country': 'Kraj',
+        'Writer': 'Pisarz',
+        'Furniture': 'Meble',
       },
       5 : {
         'Obtain' : 'Zdobyć',
