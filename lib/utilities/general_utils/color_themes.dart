@@ -14,3 +14,19 @@ const Color klFairOrange = Color(0xFFFFE1C6);
 const Color klFairOrangeDark = Color(0xFFDFC1A6);
 const Color klPurpleBlue = Color(0xFF1B3D9F);
 const Color klPurpleBlueDark = Color(0xFF08196A);
+
+const Color klAutumnYellow = Color(0xFFF6962F);
+const Color klAutumnOrange = Color(0xFFF2803A);
+const Color klAutumnRed = Color(0xFF992113);
+const Color klAutumnBrown = Color(0xFF470B13);
+
+// Darker themes
+
+const Color klDarkIntermediary = Color(0xFF181818);
+const Color klDarkPrimary = Color(0xFF020202);
+
+const Color klBrightYellow = Color(0xFFFFEB00);
+const Color klDarkerYellow = Color(0xFFD5B10D);
+
+const Color klAbsoluteWhite = Color(0xFFFFFFFF);
+const Color klDarkerWhite = Color(0xFFB3B3B9);

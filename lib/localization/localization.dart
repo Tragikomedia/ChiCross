@@ -8,6 +8,10 @@ const Map localization = {
       'theme0': 'Oriental Cherry',
       'theme1': 'Toffee',
       'theme2': 'Sand Blues',
+      'theme3' : 'Bee-Holder',
+      'theme4' : 'Night Owl',
+      'theme5' : 'Classic',
+      'theme6' : 'Autumn Forest'
     },
     'settings': {
       'autosave': 'Autosave',
@@ -408,6 +412,10 @@ const Map localization = {
       'theme0': 'Wiśnia Orientu',
       'theme1': 'Toffi',
       'theme2': 'Blues Piasków',
+      'theme3' : 'Pszczoła Mroku',
+      'theme4' : 'Nocny Marek',
+      'theme5' : 'Klasyczny',
+      'theme6' : 'Jesienny Las'
     },
     'settings' : {
       'autosave' : 'Autozapis',

@@ -23,5 +23,33 @@ List<ThemeColorSet> themes = [
       secondaryColor: klPurpleBlue,
       intermediaryColor: klFairOrangeDark,
       strongestColor: klPurpleBlueDark,
+      borderColor: Colors.black),
+  ThemeColorSet(
+      name: 'theme3',
+      primaryColor: klDarkPrimary,
+      secondaryColor: klDarkerYellow,
+      intermediaryColor: klDarkIntermediary,
+      strongestColor: klBrightYellow,
+      borderColor: Colors.white),
+  ThemeColorSet(
+      name: 'theme4',
+      primaryColor: klDarkPrimary,
+      secondaryColor: klAbsoluteWhite,
+      intermediaryColor: klDarkIntermediary,
+      strongestColor: klDarkerWhite,
+      borderColor: Colors.white),
+  ThemeColorSet(
+      name: 'theme5',
+      primaryColor: klAbsoluteWhite,
+      secondaryColor: klDarkIntermediary,
+      intermediaryColor: klDarkerWhite,
+      strongestColor: klDarkPrimary,
+      borderColor: Colors.black),
+  ThemeColorSet(
+      name: 'theme6',
+      primaryColor: klAutumnRed,
+      secondaryColor: klAutumnYellow,
+      intermediaryColor: klAutumnBrown,
+      strongestColor: klAutumnOrange,
       borderColor: Colors.black)
 ];
