@@ -28,11 +28,12 @@ class GameTile extends StatelessWidget {
     int tileVerticalPosition = number % height; 
     int tileHorizontalPosition = number ~/ width;
     var thickBorderColor = ThemeManager.of(context).colorSet.strongestColor;
+    var regularBorderColor = ThemeManager.of(context).colorSet.borderColor;
     return Border(
-      top: (tileVerticalPosition == height/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
-      right: (tileHorizontalPosition == width/2 - 1) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
-      left: (tileHorizontalPosition == width/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: Colors.black, width: 0.5),
-      bottom: (tileVerticalPosition == height/2 - 1 || tileVerticalPosition == height - 1) ? BorderSide(color: thickBorderColor, width: (tileVerticalPosition == height/2 - 1) ? 1.5 : 3.0) : BorderSide(color: Colors.black, width: 0.5)
+      top: (tileVerticalPosition == height/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: regularBorderColor, width: 0.5),
+      right: (tileHorizontalPosition == width/2 - 1) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: regularBorderColor, width: 0.5),
+      left: (tileHorizontalPosition == width/2) ? BorderSide(color: thickBorderColor, width: 1.5) : BorderSide(color: regularBorderColor, width: 0.5),
+      bottom: (tileVerticalPosition == height/2 - 1 || tileVerticalPosition == height - 1) ? BorderSide(color: thickBorderColor, width: (tileVerticalPosition == height/2 - 1) ? 1.5 : 3.0) : BorderSide(color: regularBorderColor, width: 0.5)
     );
   }
 
