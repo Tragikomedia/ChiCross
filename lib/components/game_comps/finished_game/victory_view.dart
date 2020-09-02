@@ -25,7 +25,6 @@ class VictoryView extends StatelessWidget {
             child: DescriptionCard(
               gameNumber: gameNumber,
               textColor: colorSet.strongestColor,
-              borderColor: colorSet.secondaryColor,
               backgroundColor: colorSet.intermediaryColor,))
     ],);
   }

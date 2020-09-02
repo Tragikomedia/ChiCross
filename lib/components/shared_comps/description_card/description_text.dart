@@ -14,7 +14,7 @@ class DescriptionText extends StatelessWidget {
       text,
       style: TextStyle(
         color: color,
-        fontSize: isChinese ? kDescriptionTextFontSize + 4 : kDescriptionTextFontSize,
+        fontSize: isChinese ? kDescriptionTextFontSize + 6 : kDescriptionTextFontSize,
         fontFamily: isChinese ? 'XiaoWei' : 'Cyrulik',
       ),
     );
