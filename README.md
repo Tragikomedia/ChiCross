@@ -21,9 +21,9 @@
 1. Clone or download this repository.
 2. [Install](https://flutter.dev/docs/get-started/install) Flutter.
 3. Run the project:
-    a. Connect your mobile device, open the terminal, go to the project's main folder and type "flutter run".
+    1. Connect your mobile device, open the terminal, go to the project's main folder and type "flutter run".
     OR
-    b. Install an IDE of your choice (e.g. Android Studio), open the project, connect your device or open an emulator, run the app.
+    2. Install an IDE of your choice (e.g. Android Studio), open the project, connect your device or open an emulator, run the app.
 
 ## External resources
 
