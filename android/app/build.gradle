@@ -47,7 +47,7 @@ android {
         applicationId "pl.tragikomedia.chinese_picross"
         minSdkVersion 16
         multiDexEnabled true
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -72,7 +72,6 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
     implementation 'com.google.firebase:firebase-auth:19.3.2'
     implementation 'com.google.firebase:firebase-firestore:21.5.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
