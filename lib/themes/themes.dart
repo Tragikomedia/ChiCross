@@ -37,7 +37,8 @@ List<ThemeColorSet> themes = [
       secondaryColor: klAbsoluteWhite,
       intermediaryColor: klDarkIntermediary,
       strongestColor: klDarkerWhite,
-      borderColor: Colors.white),
+      borderColor: Colors.white,
+      usedHintColor: Colors.black26),
   ThemeColorSet(
       name: 'theme5',
       primaryColor: klAbsoluteWhite,
@@ -51,5 +52,5 @@ List<ThemeColorSet> themes = [
       secondaryColor: klAutumnYellow,
       intermediaryColor: klAutumnBrown,
       strongestColor: klAutumnOrange,
-      borderColor: Colors.black)
+      borderColor: Colors.white)
 ];

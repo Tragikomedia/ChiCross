@@ -7,7 +7,8 @@ class ThemeColorSet {
   final Color intermediaryColor;
   final Color strongestColor;
   final Color borderColor;
+  final Color usedHintColor;
 
-  ThemeColorSet({@required this.name, @required this.primaryColor, @required this.secondaryColor, @required this.intermediaryColor, @required this.strongestColor, @required this.borderColor});
+  ThemeColorSet({@required this.name, @required this.primaryColor, @required this.secondaryColor, @required this.intermediaryColor, @required this.strongestColor, @required this.borderColor, this.usedHintColor=Colors.grey});
 
 }
