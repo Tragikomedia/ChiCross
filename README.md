@@ -24,6 +24,7 @@
     1. Connect your mobile device, open the terminal, go to the project's main folder and type "flutter run".
     OR
     2. Install an IDE of your choice (e.g. Android Studio), open the project, connect your device or open an emulator, run the app.
+4. To be able to use the features relying on Firebase, you should also add your personal [google-services.json](https://firebase.google.com/docs/android/setup) file to android/app directory.
 
 ## External resources
 
