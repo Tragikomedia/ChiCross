@@ -26,6 +26,8 @@
     2. Install an IDE of your choice (e.g. Android Studio), open the project, connect your device or open an emulator, run the app.
 4. To be able to use the features relying on Firebase, you should also add your personal [google-services.json](https://firebase.google.com/docs/android/setup) file to android/app directory.
 
+Alternatively, you can directly download a working .apk file from the apk_files directory (choose one suitable for your device).
+
 ## External resources
 
 ### Flutter packages
